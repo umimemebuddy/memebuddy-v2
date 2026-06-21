@@ -2,6 +2,10 @@ import Link from "next/link";
 import { recipes, categories, difficultyMap } from "@/data/recipes";
 import { notFound } from "next/navigation";
 
+export async function generateStaticParams() {
+  return recipes.map((r) => ({ id: r.id }));
+}
+
 export default async function RecipeDetailPage({
   params,
 }: {

@@ -232,6 +232,27 @@ export default function Home() {
             <span className="neon-text-purple" style={{ opacity: 0.5 }}> 没有废话。只有酒精和PVP。</span>
           </div>
 
+          {/* X/Twitter Link — 醒目绚丽 */}
+          <div className="animate-fade-in-up mb-3">
+            <a
+              href="https://x.com/DommeByte"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 font-mono font-bold text-sm transition-all duration-300 hover:scale-105"
+              style={{
+                background: "linear-gradient(135deg, rgba(176,38,255,0.25), rgba(255,45,149,0.25), rgba(0,240,255,0.25))",
+                border: "1px solid rgba(176,38,255,0.5)",
+                borderRadius: "6px",
+                boxShadow: "0 0 20px rgba(176,38,255,0.4), 0 0 40px rgba(255,45,149,0.3), 0 0 60px rgba(0,240,255,0.2)",
+                textShadow: "0 0 8px #b026ff, 0 0 16px #ff2d95",
+              }}
+            >
+              <span className="animate-neon-flicker" style={{ color: C.pink, fontSize: "1.1rem", textShadow: `0 0 8px ${C.pink}, 0 0 16px ${C.pink}` }}>𝕏</span>
+              <span style={{ color: C.purple, textShadow: `0 0 6px ${C.purple}` }}>DommeByte</span>
+              <span className="animate-urgent neon-text-cyan" style={{ fontSize: "0.7rem" }}>⚡</span>
+            </a>
+          </div>
+
           {/* Divider */}
           <div className="cyber-divider mt-4" />
         </div>
@@ -423,6 +444,7 @@ export default function Home() {
               <span style={{ color: C.muted }}>MEMEBUDDY.UK © 2026</span>
             </div>
             <div className="flex items-center gap-4">
+              <a href="https://x.com/DommeByte" target="_blank" rel="noopener noreferrer" className="animate-neon-flicker hover:opacity-80 transition-opacity font-bold" style={{ color: C.pink, textShadow: `0 0 6px ${C.pink}` }}>𝕏</a>
               <Link href="/recipes" className="neon-text-orange hover:opacity-80 transition-opacity font-bold">RECIPES</Link>
               <Link href="/journal" className="neon-text-cyan hover:opacity-80 transition-opacity font-bold">JOURNAL</Link>
               <Link href="/about" className="neon-text-purple hover:opacity-80 transition-opacity font-bold">ABOUT</Link>
