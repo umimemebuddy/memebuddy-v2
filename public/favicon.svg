@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#030306"/>
+  <text x="2" y="22" font-family="monospace" font-weight="bold" font-size="14" fill="#ff6b00">M</text>
+  <text x="17" y="22" font-family="monospace" font-weight="bold" font-size="14" fill="#ff3b3b">B</text>
+  <rect x="13" y="8" width="3" height="16" fill="#1a1a28" rx="1"/>
+</svg>

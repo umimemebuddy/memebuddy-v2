@@ -1,17 +1,25 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="border-t py-5" style={{ borderColor: "rgba(255,107,0,0.2)", background: "#030306" }}>
-      <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 font-mono text-sm">
-        <div className="flex items-center gap-3">
-          <span className="animate-price-up neon-text-green ticker-glow font-bold">GMGN</span>
-          <span style={{ color: "#444455" }}>MEMEBUDDY.UK © 2026</span>
+    <footer className="border-t py-4" style={{ borderColor: "#ff8c0020", background: "#08080a" }}>
+      <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2 font-mono text-xs">
+        <div className="flex items-center gap-2">
+          <span className="bar-neon bar-neon-green font-bold">GMGN</span>
+          <span style={{ color: "#555" }}>MEMEBUDDY.UK © 2026</span>
         </div>
-        <div className="flex items-center gap-5">
-          <a href="/recipes" className="neon-text-orange hover:opacity-80 transition-opacity font-bold">RECIPES</a>
-          <a href="/journal" className="neon-text-cyan hover:opacity-80 transition-opacity font-bold">JOURNAL</a>
-          <a href="/about" className="neon-text-purple hover:opacity-80 transition-opacity font-bold">ABOUT</a>
+        <div className="flex items-center gap-4">
+          <a href="https://instagram.com/umi_jewelry_gemstone" target="_blank" rel="noopener noreferrer" className="ig-gemstone font-bold hover:opacity-80 transition-opacity">💎 IG</a>
+          <a href="https://x.com/DommeByte" target="_blank" rel="noopener noreferrer" className="bloomberg-pink font-bold hover:opacity-80 transition-opacity">𝕏</a>
+          <Link href="/recipes" className="bloomberg-orange font-bold hover:opacity-80 transition-opacity">🥃 DRINKS</Link>
+          <Link href="/journal" className="bloomberg-cyan font-bold hover:opacity-80 transition-opacity">JOURNAL</Link>
+          <Link href="/about" className="bloomberg-purple font-bold hover:opacity-80 transition-opacity">ABOUT</Link>
         </div>
-        <span className="animate-neon-flicker neon-text-red font-bold">NO BS · BOOZE & PVP</span>
+        <div className="flex items-center gap-2">
+          <span className="bar-neon bar-neon-orange font-bold">🥃 BOOZE</span>
+          <span style={{ color: "#333" }}>×</span>
+          <span className="bar-neon bar-neon-red animate-urgent font-bold">PVP</span>
+        </div>
       </div>
     </footer>
   );
