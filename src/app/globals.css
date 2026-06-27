@@ -1,41 +1,87 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #08080a;
-  --color-foreground: #e0e0e0;
-  --color-muted: #555555;
-  --color-muted-dim: #333333;
-  --color-muted-faint: #1a1a1a;
-  --color-card-bg: #0d0d0d;
-  --color-card-border: #222222;
-  --color-neon-cyan: #00d4ff;
-  --color-neon-pink: #ff2d95;
-  --color-neon-purple: #b026ff;
-  --color-neon-amber: #ffb800;
-  --color-neon-green: #00ff88;
-  --color-neon-red: #ff3b3b;
+  --color-background: #050510;
+  --color-foreground: #c8d6e5;
+  --color-muted: #4a5568;
+  --color-muted-dim: #2d3748;
+  --color-muted-faint: #1a2035;
+  --color-card-bg: #0a0a1a;
+  --color-card-border: #1e2a45;
+  /* DRINK_MASTER 赛博科技色系 */
+  --color-cyber-primary: #00e5ff;
+  --color-cyber-secondary: #7c3aed;
+  --color-cyber-accent: #f72585;
+  --color-cyber-green: #00f5d4;
+  --color-cyber-gold: #f0c040;
+  --color-cyber-blue: #4361ee;
+  --color-cyber-dark: #0a0a1a;
+  --color-cyber-panel: #0f0f23;
+  --color-cyber-border: #1e2a45;
+  --color-cyber-text: #c8d6e5;
+  --color-cyber-dim: #5a6d8a;
+  --color-cyber-glow: rgba(0,229,255,0.15);
+  --color-cyber-scanline: rgba(0,229,255,0.03);
+  /* 保留兼容色 */
+  --color-neon-cyan: #00e5ff;
+  --color-neon-pink: #f72585;
+  --color-neon-purple: #7c3aed;
+  --color-neon-amber: #f0c040;
+  --color-neon-green: #00f5d4;
+  --color-neon-red: #ff4757;
   --color-gmgn-orange: #ff6b00;
   --color-gmgn-yellow: #ffe500;
   --color-gmgn-lime: #c8ff00;
-  --color-bloomberg-orange: #ff8c00;
-  --color-bloomberg-green: #00ff88;
-  --color-bloomberg-red: #ff3b3b;
-  --color-bloomberg-cyan: #00d4ff;
+  --color-bloomberg-orange: #f0c040;
+  --color-bloomberg-green: #00f5d4;
+  --color-bloomberg-red: #ff4757;
+  --color-bloomberg-cyan: #00e5ff;
   --color-bloomberg-yellow: #ffe500;
   --color-bloomberg-white: #ffffff;
-  --color-cn-text: #ff8c00;
-  --color-amber-glow: #ffb800;
+  --color-cn-text: #f0c040;
+  --color-amber-glow: #f0c040;
   --color-whiskey: #c85500;
-  --color-lever-green: #39ff14;
-  --color-lever-red: #ff2222;
+  --color-lever-green: #00f5d4;
+  --color-lever-red: #ff4757;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* === BASE: 赛博暗色终端 === */
 body {
-  background: #08080a !important;
-  color: #e0e0e0 !important;
-  font-family: var(--font-mono), ui-monospace, "Consolas", monospace;
+  background: #050510 !important;
+  color: #c8d6e5 !important;
+  font-family: var(--font-mono), ui-monospace, "Consolas", "JetBrains Mono", monospace;
+}
+
+/* 全局扫描线叠加 (可选, 极淡) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,229,255,0.015) 2px,
+    rgba(0,229,255,0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* 网格背景点阵 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle, rgba(0,229,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
 }
 
 html { scroll-behavior: smooth; }
@@ -54,15 +100,16 @@ html { scroll-behavior: smooth; }
   .animate-fade-in-up { animation: none !important; opacity: 1 !important; }
 }
 
-/* === SCROLLBAR — amber whiskey === */
+/* === SCROLLBAR — cyber cyan === */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #08080a; }
-::-webkit-scrollbar-thumb { background: #ff8c00; }
+::-webkit-scrollbar-track { background: #050510; }
+::-webkit-scrollbar-thumb { background: #00e5ff40; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
 
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes tickerScroll {
@@ -71,13 +118,13 @@ html { scroll-behavior: smooth; }
 }
 
 @keyframes priceFlashUp {
-  0%, 100% { color: #00ff88; }
-  50% { color: #c8ff00; }
+  0%, 100% { color: #00f5d4; }
+  50% { color: #00e5ff; }
 }
 
 @keyframes priceFlashDown {
-  0%, 100% { color: #ff3b3b; }
-  50% { color: #ff6b00; }
+  0%, 100% { color: #ff4757; }
+  50% { color: #f72585; }
 }
 
 @keyframes urgentBlink {
@@ -95,41 +142,122 @@ html { scroll-behavior: smooth; }
   20%, 24%, 55% { opacity: 0.4; }
 }
 
-.animate-fade-in-up { animation: fadeInUp 0.3s ease-out forwards; }
+/* === CYBERPUNK ANIMATIONS === */
+@keyframes cyberScan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+@keyframes cyberPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,229,255,0.2), 0 0 20px rgba(0,229,255,0.1); }
+  50% { box-shadow: 0 0 16px rgba(0,229,255,0.4), 0 0 40px rgba(0,229,255,0.2); }
+}
+
+@keyframes cyberGlow {
+  0%, 100% { border-color: rgba(0,229,255,0.3); box-shadow: 0 0 6px rgba(0,229,255,0.1); }
+  50% { border-color: rgba(0,229,255,0.6); box-shadow: 0 0 16px rgba(0,229,255,0.25); }
+}
+
+@keyframes dataFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes hexPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes glitchText {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-2px, 1px); }
+  94% { transform: translate(2px, -1px); }
+  96% { transform: translate(-1px, 2px); }
+}
+
+@keyframes terminalBoot {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes codeRain {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes scanLine {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
 .animate-price-up { animation: priceFlashUp 1.2s ease-in-out infinite; }
 .animate-price-down { animation: priceFlashDown 1.2s ease-in-out infinite; }
 .animate-urgent { animation: urgentBlink 1.2s ease-in-out infinite; }
+.animate-cyber-pulse { animation: cyberPulse 2.5s ease-in-out infinite; }
+.animate-cyber-glow { animation: cyberGlow 3s ease-in-out infinite; }
+.animate-glitch { animation: glitchText 4s ease-in-out infinite; }
+.animate-terminal-boot { animation: terminalBoot 0.5s ease-out forwards; }
 
 /* === BAR TEXT COLORS === */
-.bloomberg-orange { color: #ff8c00; }
-.bloomberg-green { color: #00ff88; }
-.bloomberg-red { color: #ff3b3b; }
-.bloomberg-cyan { color: #00d4ff; }
+.bloomberg-orange { color: #f0c040; }
+.bloomberg-green { color: #00f5d4; }
+.bloomberg-red { color: #ff4757; }
+.bloomberg-cyan { color: #00e5ff; }
 .bloomberg-yellow { color: #ffe500; }
 .bloomberg-white { color: #ffffff; }
-.bloomberg-amber { color: #ffb800; }
+.bloomberg-amber { color: #f0c040; }
 .bloomberg-lime { color: #c8ff00; }
-.bloomberg-purple { color: #b026ff; }
-.bloomberg-pink { color: #ff2d95; }
+.bloomberg-purple { color: #7c3aed; }
+.bloomberg-pink { color: #f72585; }
 .whiskey { color: #c85500; }
 
-/* CN text — warm amber, bold,醒目 */
-.cn-text { color: #ff8c00; font-weight: 700; }
+/* CN text — gold accent */
+.cn-text { color: #f0c040; font-weight: 700; }
 
 /* === NEON TEXT === */
-.neon-text-cyan { color: #00d4ff; }
-.neon-text-pink { color: #ff2d95; }
-.neon-text-amber { color: #ffb800; }
-.neon-text-green { color: #00ff88; }
-.neon-text-red { color: #ff3b3b; }
+.neon-text-cyan { color: #00e5ff; }
+.neon-text-pink { color: #f72585; }
+.neon-text-amber { color: #f0c040; }
+.neon-text-green { color: #00f5d4; }
+.neon-text-red { color: #ff4757; }
 .neon-text-orange { color: #ff6b00; }
 .neon-text-lime { color: #c8ff00; }
-.neon-text-purple { color: #b026ff; }
+.neon-text-purple { color: #7c3aed; }
 .neon-text-yellow { color: #ffe500; }
+
+/* === CYBER GRADIENT TEXT === */
+.cyber-gradient {
+  background: linear-gradient(135deg, #00e5ff, #7c3aed, #f72585);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cyber-gradient-green {
+  background: linear-gradient(135deg, #00f5d4, #00e5ff);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cyber-gradient-gold {
+  background: linear-gradient(135deg, #f0c040, #ffe500, #f0c040);
+  background-size: 200% auto;
+  animation: dataFlow 2s linear infinite;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 /* === GRADIENT TEXT === */
 .gradient-text-pvp {
-  background: linear-gradient(135deg, #ff8c00, #ffb800, #ff6b00);
+  background: linear-gradient(135deg, #f0c040, #ffe500, #f0c040);
   color: transparent; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
@@ -138,29 +266,47 @@ html { scroll-behavior: smooth; }
 .ticker-content { display: flex; animation: tickerScroll 18s linear infinite; white-space: nowrap; will-change: transform; }
 .ticker-content:hover { animation-play-state: paused; }
 
-/* === BAR CARD — warm amber left border, GPU-accelerated hover === */
+/* === BAR CARD — cyber terminal card === */
 .bar-card, .menu-card {
-  background: #0d0d0d;
-  border-left: 3px solid #ff8c00;
+  background: #0a0a1a;
+  border-left: 3px solid #00e5ff;
   will-change: background;
-  transition: background 0.15s ease, border-left-color 0.15s ease;
+  transition: background 0.15s ease, border-left-color 0.15s ease, box-shadow 0.15s ease;
 }
 .bar-card:hover, .menu-card:hover {
-  background: #141410;
+  background: #0f0f23;
+  box-shadow: 0 0 12px rgba(0,229,255,0.08);
 }
-.bar-card:hover { border-left-color: #ffb800; }
-.menu-card:hover { border-left-color: #00d4ff; }
+.bar-card:hover { border-left-color: #7c3aed; }
+.menu-card:hover { border-left-color: #f72585; }
 
-/* === TERMINAL CARD — kept for misc use === */
+/* === TERMINAL CARD === */
 .terminal-card {
-  background: #0d0d0d;
-  border: 1px solid #222222;
+  background: #0a0a1a;
+  border: 1px solid #1e2a45;
 }
 
-/* === LEVER BAR — visual leverage meter === */
+/* === CYBER PANEL === */
+.cyber-panel {
+  background: #0f0f23;
+  border: 1px solid #1e2a45;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.cyber-panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00e5ff60, #7c3aed60, transparent);
+  z-index: 1;
+}
+
+/* === LEVER BAR === */
 .lever-bar {
   height: 6px;
-  background: #1a1a1a;
+  background: #1e2a45;
   border-radius: 1px;
   overflow: hidden;
   position: relative;
@@ -169,26 +315,26 @@ html { scroll-behavior: smooth; }
   height: 100%;
   border-radius: 1px;
 }
-.lever-low { background: linear-gradient(90deg, #39ff14, #00ff88); }
-.lever-mid { background: linear-gradient(90deg, #ffb800, #ff8c00); }
-.lever-high { background: linear-gradient(90deg, #ff3b3b, #ff2222); }
+.lever-low { background: linear-gradient(90deg, #00f5d4, #00e5ff); }
+.lever-mid { background: linear-gradient(90deg, #f0c040, #ffe500); }
+.lever-high { background: linear-gradient(90deg, #ff4757, #f72585); }
 
-/* === DRUNK LEVEL — intoxication = risk === */
-.drunk-1 { color: #39ff14; } /* tipsy / 低杠杆 */
-.drunk-2 { color: #00ff88; } /* buzzed / 中杠杆 */
-.drunk-3 { color: #ffb800; } /* drunk / 高杠杆 */
-.drunk-4 { color: #ff8c00; } /* wasted / 极高杠杆 */
-.drunk-5 { color: #ff3b3b; } /* REKT / 爆仓 */
+/* === DRUNK LEVEL === */
+.drunk-1 { color: #00f5d4; }
+.drunk-2 { color: #00e5ff; }
+.drunk-3 { color: #f0c040; }
+.drunk-4 { color: #ff6b00; }
+.drunk-5 { color: #ff4757; }
 
-/* === BAR MENU — electronic ordering screen === */
+/* === BAR MENU === */
 .menu-card {
-  background: #0d0d0d;
-  border-left: 3px solid #ff8c00;
+  background: #0a0a1a;
+  border-left: 3px solid #00e5ff;
   transition: background 0.2s ease, border-left-color 0.2s ease;
 }
 .menu-card:hover {
-  background: #141410;
-  border-left-color: #00d4ff;
+  background: #0f0f23;
+  border-left-color: #f72585;
 }
 .menu-tag {
   font-size: 0.65rem;
@@ -203,78 +349,82 @@ html { scroll-behavior: smooth; }
   letter-spacing: 0.1em;
   font-weight: 700;
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: background 0.15s ease, color 0.15s ease;
 }
 .menu-category-btn.active {
-  background: #ff8c00;
-  color: #000;
+  background: #00e5ff;
+  color: #050510;
 }
 .menu-category-btn:not(.active) {
-  background: #1a1a1a;
-  color: #888;
+  background: #1a2035;
+  color: #5a6d8a;
 }
 .menu-category-btn:not(.active):hover {
-  color: #ff8c00;
+  color: #00e5ff;
 }
 .menu-price {
-  color: #ff8c00;
+  color: #00e5ff;
   font-weight: 800;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
 }
 
-/* === BAR NEON SIGN — flickering neon text === */
+/* === BAR NEON SIGN — cyber neon === */
 .bar-neon {
   animation: neonFlicker 4s ease-in-out infinite;
 }
 .bar-neon-orange {
-  color: #ff8c00;
-  text-shadow: 0 0 7px rgba(255,140,0,0.4), 0 0 15px rgba(255,140,0,0.2);
+  color: #f0c040;
+  text-shadow: 0 0 7px rgba(240,192,64,0.4), 0 0 15px rgba(240,192,64,0.2);
 }
 .bar-neon-amber {
-  color: #ffb800;
-  text-shadow: 0 0 7px rgba(255,184,0,0.4), 0 0 15px rgba(255,184,0,0.2);
+  color: #f0c040;
+  text-shadow: 0 0 7px rgba(240,192,64,0.4), 0 0 15px rgba(240,192,64,0.2);
 }
 .bar-neon-red {
-  color: #ff3b3b;
-  text-shadow: 0 0 7px rgba(255,59,59,0.4), 0 0 15px rgba(255,59,59,0.2);
+  color: #ff4757;
+  text-shadow: 0 0 7px rgba(255,71,87,0.4), 0 0 15px rgba(255,71,87,0.2);
 }
 .bar-neon-green {
-  color: #00ff88;
-  text-shadow: 0 0 7px rgba(0,255,136,0.4), 0 0 15px rgba(0,255,136,0.2);
+  color: #00f5d4;
+  text-shadow: 0 0 7px rgba(0,245,212,0.4), 0 0 15px rgba(0,245,212,0.2);
+}
+.bar-neon-cyan {
+  color: #00e5ff;
+  text-shadow: 0 0 7px rgba(0,229,255,0.4), 0 0 15px rgba(0,229,255,0.2);
 }
 
-/* === SECTION HEADER — bar style === */
+/* === SECTION HEADER === */
 .bar-header {
-  border-bottom: 1px solid #ff8c0040;
+  border-bottom: 1px solid #00e5ff30;
   padding-bottom: 4px;
 }
 
-/* === DIVIDER — amber glow === */
+/* === DIVIDER === */
 .bar-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #ff8c00, #ffb800, #ff8c00, transparent);
-  opacity: 0.5;
+  background: linear-gradient(90deg, transparent, #00e5ff40, #7c3aed40, #00e5ff40, transparent);
+  opacity: 0.6;
 }
 .terminal-divider {
   height: 1px;
-  background: #ff8c00;
-  opacity: 0.6;
+  background: #00e5ff;
+  opacity: 0.4;
 }
 
-/* === HOVER — GPU-accelerated === */
+/* === HOVER === */
 .hover-bar, .hover-terminal { will-change: background; transition: background 0.15s ease; }
-.hover-bar:hover, .hover-terminal:hover { background: #141410; }
+.hover-bar:hover, .hover-terminal:hover { background: #0f0f23; }
 
-/* === IG GEMSTONE === */
+/* === IG GEMSTONE — cyber adaptation === */
 @keyframes gemShimmer {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 .ig-gemstone {
-  background: linear-gradient(135deg, #ff2d95, #b026ff, #00d4ff, #00ff88, #ffb800, #ff6b00, #ffe500, #c8ff00, #ff2d95);
+  background: linear-gradient(135deg, #f72585, #7c3aed, #00e5ff, #00f5d4, #f0c040, #ff6b00, #ffe500, #c8ff00, #f72585);
   background-size: 300% 300%;
   animation: gemShimmer 3s ease-in-out infinite;
   color: transparent;
@@ -283,31 +433,31 @@ html { scroll-behavior: smooth; }
   background-clip: text;
 }
 .ig-gemstone-box {
-  border: 1px solid #ff2d95;
-  background: #0d0d0d;
+  border: 1px solid #f72585;
+  background: #0a0a1a;
 }
 
 /* === WARNING BAR === */
 .warning-bar {
-  background: #1a0000;
-  border: 1px solid #ff3b3b;
+  background: #1a0010;
+  border: 1px solid #ff4757;
 }
 
 /* === BLINKING CURSOR === */
 .blinking-cursor::after {
   content: '█';
-  color: #ff8c00;
+  color: #00e5ff;
   animation: cursorBlink 1s step-end infinite;
   margin-left: 2px;
 }
 
-/* === AMBER GLOW BG — warm bar interior feel === */
+/* === AMBER GLOW BG — cyber radial glow === */
 .amber-glow-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(255,140,0,0.06) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 30%, rgba(255,184,0,0.04) 0%, transparent 40%);
+  background: radial-gradient(ellipse at 20% 50%, rgba(0,229,255,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 30%, rgba(124,58,237,0.04) 0%, transparent 40%);
 }
 
-/* === PARTNER PAGE — gold luxury theme === */
+/* === PARTNER PAGE — cyber gold luxury === */
 @keyframes goldShimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -317,12 +467,12 @@ html { scroll-behavior: smooth; }
   50% { opacity: 0.6; }
 }
 @keyframes borderGlow {
-  0%, 100% { border-color: #ffb800; }
+  0%, 100% { border-color: #f0c040; }
   50% { border-color: #ffe500; }
 }
 
 .partner-gold {
-  background: linear-gradient(90deg, #ff8c00, #ffb800, #ffe500, #ffb800, #ff8c00);
+  background: linear-gradient(90deg, #f0c040, #ffe500, #f0c040);
   background-size: 200% auto;
   animation: goldShimmer 3s linear infinite;
   color: transparent;
@@ -332,45 +482,45 @@ html { scroll-behavior: smooth; }
 }
 
 .partner-hero {
-  background: radial-gradient(ellipse at 50% 20%, rgba(255,184,0,0.12) 0%, transparent 50%),
-              radial-gradient(ellipse at 30% 80%, rgba(255,140,0,0.08) 0%, transparent 40%),
-              radial-gradient(ellipse at 70% 60%, rgba(255,229,0,0.05) 0%, transparent 30%);
+  background: radial-gradient(ellipse at 50% 20%, rgba(240,192,64,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 30% 80%, rgba(240,192,64,0.05) 0%, transparent 40%),
+              radial-gradient(ellipse at 70% 60%, rgba(255,229,0,0.03) 0%, transparent 30%);
 }
 
 .partner-divider {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ff8c00, #ffe500, #ffb800, #ff8c00, transparent);
+  background: linear-gradient(90deg, transparent, #f0c040, #ffe500, #f0c040, transparent);
   animation: goldShimmer 4s linear infinite;
   background-size: 200% auto;
 }
 
 .partner-card {
-  background: #0d0d0d;
-  border: 1px solid #ffb80030;
+  background: #0a0a1a;
+  border: 1px solid #f0c04030;
   border-radius: 2px;
 }
 
 .partner-highlight {
-  background: linear-gradient(135deg, #1a0800 0%, #0d0600 100%);
-  border-left: 3px solid #ffb800;
+  background: linear-gradient(135deg, #1a1200 0%, #0f0a00 100%);
+  border-left: 3px solid #f0c040;
   animation: borderGlow 2s ease-in-out infinite;
 }
 
 .partner-region-card {
-  background: #0a0a0a;
-  border: 1px solid #ffb80020;
+  background: #0a0a1a;
+  border: 1px solid #f0c04020;
   border-radius: 2px;
   will-change: background;
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 .partner-region-card:hover {
-  background: #141410;
-  border-color: #ffb80060;
+  background: #0f0f23;
+  border-color: #f0c04060;
 }
 
 .partner-badge {
-  background: #0d0d0d;
-  border: 1px solid #ffb80030;
+  background: #0a0a1a;
+  border: 1px solid #f0c04030;
   padding: 2px 8px;
   border-radius: 2px;
   font-size: 0.65rem;
@@ -379,33 +529,86 @@ html { scroll-behavior: smooth; }
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 .partner-badge:hover {
-  background: #141410;
-  border-color: #ffb80080;
+  background: #0f0f23;
+  border-color: #f0c04080;
 }
 
 .partner-promise {
-  background: radial-gradient(ellipse at center, rgba(255,184,0,0.08) 0%, transparent 70%);
-  border: 1px solid #ffb80040;
+  background: radial-gradient(ellipse at center, rgba(240,192,64,0.06) 0%, transparent 70%);
+  border: 1px solid #f0c04040;
   border-radius: 2px;
 }
 
 .partner-tg-btn {
-  background: #1a0800;
-  border: 2px solid #ffb800;
+  background: #1a1200;
+  border: 2px solid #f0c040;
   border-radius: 3px;
   animation: borderGlow 2s ease-in-out infinite;
   will-change: transform;
 }
 
-/* === PARTNER BANNER on homepage — eye-catching entry === */
+/* === PARTNER BANNER on homepage === */
 .partner-banner {
-  background: linear-gradient(135deg, #0d0600 0%, #1a0800 50%, #0d0600 100%);
-  border: 1px solid #ffb80060;
+  background: linear-gradient(135deg, #0a0800 0%, #1a1200 50%, #0a0800 100%);
+  border: 1px solid #f0c04060;
   border-radius: 2px;
   animation: borderGlow 2s ease-in-out infinite;
   will-change: background;
   transition: background 0.15s ease;
 }
 .partner-banner:hover {
-  background: linear-gradient(135deg, #1a0800 0%, #200a00 50%, #1a0800 100%);
+  background: linear-gradient(135deg, #1a1200 0%, #200e00 50%, #1a1200 100%);
+}
+
+/* === DRINK_MASTER BRAND === */
+.dm-brand {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.15em;
+}
+.dm-logo {
+  background: linear-gradient(135deg, #00e5ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.dm-tagline {
+  color: #5a6d8a;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+/* === GITHUB LINK === */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border: 1px solid #1e2a45;
+  border-radius: 2px;
+  background: #0a0a1a;
+  color: #5a6d8a;
+  transition: all 0.15s ease;
+}
+.github-link:hover {
+  border-color: #00e5ff;
+  color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0,229,255,0.15);
+}
+
+/* === CYBER SCAN LINE EFFECT === */
+.cyber-scan {
+  position: relative;
+  overflow: hidden;
+}
+.cyber-scan::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.3), transparent);
+  animation: cyberScan 3s linear infinite;
+  pointer-events: none;
 }

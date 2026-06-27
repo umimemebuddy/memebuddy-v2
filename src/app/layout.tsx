@@ -19,15 +19,15 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#08080a",
+  themeColor: "#050510",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "MemeBuddy — GMGN · PVP · Booze / 山寨币 · 酒精 · 没有退路",
-  description: "No bullshit. Just booze and PVP. Cocktail recipes meets crypto trading. / 没有废话。只有酒精和PVP。",
-  keywords: ["cocktail", "GMGN", "PVP", "山寨币", "meme coin", "trading", "MemeBuddy", "调酒", "鸡尾酒", "迷因币"],
+  title: "DRINK_MASTER — Professional Beverage Design Lab / 专业饮料配方设计",
+  description: "DRINK_MASTER provides professional cocktail recipe design. World-class mixology meets algorithmic precision. / 提供专业鸡尾酒配方设计。世界级调酒艺术与算法精度的结合。",
+  keywords: ["DRINK_MASTER", "cocktail", "mixology", "beverage design", "drink recipe", "调酒", "鸡尾酒", "配方设计", "MemeBuddy", "memebuddy.uk"],
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -35,16 +35,16 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "MemeBuddy — GMGN · PVP · Booze",
-    description: "No bullshit. Just booze and PVP.",
+    title: "DRINK_MASTER — Professional Beverage Design Lab",
+    description: "World-class cocktail recipes. Algorithmic precision meets mixology art.",
     url: "https://memebuddy.uk",
-    siteName: "MemeBuddy",
+    siteName: "DRINK_MASTER",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "MemeBuddy — GMGN · PVP · Booze",
-    description: "No bullshit. Just booze and PVP.",
+    title: "DRINK_MASTER — Professional Beverage Design Lab",
+    description: "World-class cocktail recipes. Algorithmic precision meets mixology art.",
   },
   robots: { index: true, follow: true },
 };
