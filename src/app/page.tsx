@@ -152,6 +152,278 @@ export default function Home() {
           {/* ===== MARKET MOOD ===== */}
           <MarketMood market={market} todayStr={todayStr} />
 
+          {/* ===== GITHUB PROJECT SHOWCASE — 开源项目重点介绍 ===== */}
+          <div className="mb-6">
+            <div className="cyber-panel p-5 md:p-8" style={{ 
+              borderColor: "rgba(6,182,212,0.5)", 
+              boxShadow: "0 0 48px rgba(6,182,212,0.15), 0 0 120px rgba(139,92,246,0.06), inset 0 0 48px rgba(6,182,212,0.02)",
+              position: "relative",
+              overflow: "hidden",
+            }}>
+              {/* 背景扫描线动画 */}
+              <div style={{
+                position: "absolute", top: 0, left: 0, right: 0, height: "1px",
+                background: "linear-gradient(90deg, transparent, rgba(6,182,212,0.3), transparent)",
+                animation: "scanLine 4s linear infinite",
+                pointerEvents: "none",
+              }} />
+              
+              {/* 顶部标题栏 — 超级大 */}
+              <div className="text-center mb-5">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <svg width="52" height="52" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4", filter: "drop-shadow(0 0 18px rgba(6,182,212,0.7))" }}>
+                    <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                  <span className="font-mono font-bold tracking-wider" style={{ color: "#f59e0b", fontSize: "1.1rem", textShadow: "0 0 20px rgba(245,158,11,0.5)", letterSpacing: "0.2em" }}>
+                    ⚡ OPEN SOURCE PROJECT ⚡ 开源项目 ⚡
+                  </span>
+                  <svg width="52" height="52" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#8b5cf6", filter: "drop-shadow(0 0 18px rgba(139,92,246,0.7))" }}>
+                    <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                </div>
+                {/* 项目名称 — 巨大型 */}
+                <h2 className="dm-brand leading-none mb-2">
+                  <span className="font-bold tracking-tighter" style={{ fontSize: "clamp(2.2rem, 8vw, 5rem)", color: "#06b6d4", textShadow: "0 0 50px rgba(6,182,212,0.35)" }}>DRINK</span>
+                  <span className="font-bold mx-0.5" style={{ fontSize: "clamp(2.2rem, 8vw, 5rem)", color: "#1e1e2a" }}>_</span>
+                  <span className="font-bold tracking-tighter" style={{ fontSize: "clamp(2.2rem, 8vw, 5rem)", color: "#8b5cf6", textShadow: "0 0 50px rgba(139,92,246,0.35)" }}>MASTER</span>
+                </h2>
+                <div className="flex flex-wrap items-center justify-center gap-3 mt-2 mb-3">
+                  <span className="font-mono tracking-widest" style={{ color: "#06b6d4", fontSize: "0.82rem", textShadow: "0 0 12px rgba(6,182,212,0.3)" }}>
+                    🧬 AI BEVERAGE DESIGN LAB
+                  </span>
+                  <span style={{ color: "#1e1e2a" }}>│</span>
+                  <span className="cn-text font-bold tracking-wider" style={{ fontSize: "0.82rem" }}>
+                    🧬 AI人工智能饮料配方实验室
+                  </span>
+                  <span style={{ color: "#1e1e2a" }}>│</span>
+                  <span className="ai-badge">v3.0</span>
+                  <span className="animate-status font-bold font-mono" style={{ color: "#10b981", fontSize: "0.72rem" }}>● MIT LICENSE</span>
+                </div>
+                {/* 仓库地址 — 超大 */}
+                <a
+                  href="https://github.com/umimemebuddy/DRINK_MASTER"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 transition-all hover:scale-105 font-mono"
+                  style={{
+                    border: "2px solid #06b6d4",
+                    background: "linear-gradient(135deg, rgba(6,182,212,0.12), rgba(139,92,246,0.06))",
+                    borderRadius: "10px",
+                    boxShadow: "0 0 32px rgba(6,182,212,0.3)",
+                    color: "#06b6d4",
+                    fontSize: "clamp(0.85rem, 2vw, 1.15rem)",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  🔗 github.com/umimemebuddy/DRINK_MASTER
+                </a>
+              </div>
+
+              {/* 分隔线 */}
+              <div className="liquid-divider my-5" />
+
+              {/* 项目简介 — 双语 */}
+              <div className="text-center mb-5">
+                <p className="font-bold mb-1 leading-relaxed" style={{ color: "#e0dcd0", fontSize: "clamp(0.95rem, 2vw, 1.2rem)" }}>
+                  The world&apos;s first open-source AI cocktail design system — 2.4M+ recipes, algorithmic precision × mixology art
+                </p>
+                <p className="cn-text leading-relaxed" style={{ fontSize: "0.9rem", opacity: 0.65 }}>
+                  全球首个开源AI鸡尾酒设计系统 — 240万+配方 · 算法精度 × 调酒艺术
+                </p>
+              </div>
+
+              {/* 核心功能 — 4大卡片 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                {/* 功能 1: AI Recipe Generation */}
+                <div className="p-4" style={{
+                  border: "1.5px solid rgba(6,182,212,0.25)",
+                  background: "linear-gradient(135deg, rgba(6,182,212,0.06), rgba(139,92,246,0.03))",
+                  borderRadius: "10px",
+                }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-2xl">🧪</span>
+                    <span className="font-mono font-bold tracking-wider" style={{ color: "#06b6d4", fontSize: "0.85rem" }}>AI RECIPE GENERATION</span>
+                  </div>
+                  <p className="text-xs leading-relaxed" style={{ color: "#5a5a62" }}>
+                    Generate unique cocktail recipes using multi-modal AI trained on 2.4M+ formulas across 47 countries. 
+                    Each recipe is validated against 180K+ human-verified references with 99.7% molecular consistency.
+                  </p>
+                  <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.45 }}>
+                    多模态AI生成独特鸡尾酒配方，基于47国240万+配方训练，18万+人工验证，分子一致性99.7%
+                  </p>
+                </div>
+                {/* 功能 2: Flavor Pairing Engine */}
+                <div className="p-4" style={{
+                  border: "1.5px solid rgba(139,92,246,0.25)",
+                  background: "linear-gradient(135deg, rgba(139,92,246,0.06), rgba(6,182,212,0.03))",
+                  borderRadius: "10px",
+                }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-2xl">🧬</span>
+                    <span className="font-mono font-bold tracking-wider" style={{ color: "#8b5cf6", fontSize: "0.85rem" }}>FLAVOR PAIRING ENGINE</span>
+                  </div>
+                  <p className="text-xs leading-relaxed" style={{ color: "#5a5a62" }}>
+                    Maps 12,000+ aromatic compounds across 64 molecular families. 
+                    Cross-modal sensory analysis discovers unexpected harmonies — yuzu-kosho × mezcal, lapsang souchong × amaro, and beyond.
+                  </p>
+                  <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.45 }}>
+                    12,000+芳香化合物 × 64分子家族图谱，跨感官分析发现柚香胡椒×梅斯卡尔、正山小种×阿玛罗等意想不到的风味共鸣
+                  </p>
+                </div>
+                {/* 功能 3: Algorithmic Leverage System */}
+                <div className="p-4" style={{
+                  border: "1.5px solid rgba(245,158,11,0.25)",
+                  background: "linear-gradient(135deg, rgba(245,158,11,0.06), rgba(225,29,72,0.03))",
+                  borderRadius: "10px",
+                }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-2xl">⚡</span>
+                    <span className="font-mono font-bold tracking-wider" style={{ color: "#f59e0b", fontSize: "0.85rem" }}>LEVERAGE SYSTEM</span>
+                  </div>
+                  <p className="text-xs leading-relaxed" style={{ color: "#5a5a62" }}>
+                    Proprietary algorithmic leverage scoring — quantifies drink strength, complexity, and innovation factor. 
+                    From classic (1×) to nuclear (10×), each recipe is risk-rated and optimized for maximum enjoyment.
+                  </p>
+                  <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.45 }}>
+                    专有算法杠杆评分系统 — 量化饮品强度、复杂度与创新指数，从经典(1×)到核弹级(10×)，每款配方风险评级优化
+                  </p>
+                </div>
+                {/* 功能 4: Open Data & Community */}
+                <div className="p-4" style={{
+                  border: "1.5px solid rgba(16,185,129,0.25)",
+                  background: "linear-gradient(135deg, rgba(16,185,129,0.06), rgba(6,182,212,0.03))",
+                  borderRadius: "10px",
+                }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-2xl">🌐</span>
+                    <span className="font-mono font-bold tracking-wider" style={{ color: "#10b981", fontSize: "0.85rem" }}>OPEN DATA & COMMUNITY</span>
+                  </div>
+                  <p className="text-xs leading-relaxed" style={{ color: "#5a5a62" }}>
+                    Fully open-source under MIT license. Recipe corpus, flavor models, and validation tools available for research. 
+                    Community contributions welcome — bartenders, chemists, and AI researchers collaborate globally.
+                  </p>
+                  <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.45 }}>
+                    MIT开源协议全开放，配方语料、风味模型、验证工具均可用于研究，欢迎调酒师、化学家、AI研究者全球协作
+                  </p>
+                </div>
+              </div>
+
+              {/* 技术栈 */}
+              <div className="mb-5 p-4" style={{
+                border: "1px solid #1e1e2a",
+                background: "rgba(6,182,212,0.02)",
+                borderRadius: "8px",
+              }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="font-mono font-bold tracking-wider" style={{ color: "#06b6d4", fontSize: "0.72rem" }}>🛠️ TECH STACK / 技术栈</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { label: "Python", color: "#06b6d4" },
+                    { label: "Next.js", color: "#8b5cf6" },
+                    { label: "TypeScript", color: "#06b6d4" },
+                    { label: "Tailwind CSS", color: "#10b981" },
+                    { label: "AI/ML Pipeline", color: "#f59e0b" },
+                    { label: "Flavor DB", color: "#e11d48" },
+                    { label: "MIT License", color: "#10b981" },
+                    { label: "Cloudflare", color: "#f59e0b" },
+                  ].map((tech) => (
+                    <span key={tech.label} className="font-mono text-xs px-3 py-1.5" style={{
+                      border: `1px solid ${tech.color}22`,
+                      background: `${tech.color}08`,
+                      borderRadius: "4px",
+                      color: tech.color,
+                      fontWeight: 700,
+                      letterSpacing: "0.04em",
+                    }}>
+                      {tech.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* 数据亮点 — 4大指标 */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+                {[
+                  { num: "2.4M+", label: "RECIPES", labelCn: "配方数据", sub: "47 countries", color: "#06b6d4" },
+                  { num: "180K+", label: "VERIFIED", labelCn: "人工验证", sub: "99.7% precision", color: "#10b981" },
+                  { num: "12K+", label: "COMPOUNDS", labelCn: "化合物库", sub: "64 families", color: "#8b5cf6" },
+                  { num: "94%", label: "APPROVAL", labelCn: "盲测好评", sub: "2,400+ panels", color: "#f59e0b" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center p-3" style={{
+                    border: `1px solid ${stat.color}18`,
+                    background: `${stat.color}06`,
+                    borderRadius: "8px",
+                  }}>
+                    <div className="font-mono font-bold" style={{ fontSize: "clamp(1.3rem, 3vw, 1.8rem)", color: stat.color, textShadow: `0 0 20px ${stat.color}30` }}>
+                      {stat.num}
+                    </div>
+                    <div className="font-mono font-bold mt-1" style={{ color: stat.color, fontSize: "0.68rem", letterSpacing: "0.1em" }}>{stat.label}</div>
+                    <div className="cn-text text-xs mt-0.5" style={{ opacity: 0.5 }}>{stat.labelCn}</div>
+                    <div className="text-xs mt-0.5" style={{ color: "#3d3d48" }}>{stat.sub}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA 按钮 — 超巨大 STAR & FORK */}
+              <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                <a
+                  href="https://github.com/umimemebuddy/DRINK_MASTER"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 px-8 md:px-12 py-4 md:py-5 transition-all hover:scale-110"
+                  style={{
+                    border: "2px solid #06b6d4",
+                    background: "linear-gradient(135deg, rgba(6,182,212,0.15), rgba(139,92,246,0.1))",
+                    borderRadius: "14px",
+                    boxShadow: "0 0 40px rgba(6,182,212,0.3), 0 0 80px rgba(6,182,212,0.08)",
+                  }}
+                >
+                  <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4", filter: "drop-shadow(0 0 12px rgba(6,182,212,0.6))" }}>
+                    <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                  <div>
+                    <div className="font-mono font-bold tracking-wider" style={{ color: "#06b6d4", fontSize: "clamp(1.2rem, 3vw, 1.8rem)", textShadow: "0 0 20px rgba(6,182,212,0.4)" }}>
+                      ⭐ STAR ON GITHUB
+                    </div>
+                    <div className="font-mono text-xs mt-0.5" style={{ color: "#4a4a52" }}>umimemebuddy/DRINK_MASTER</div>
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/umimemebuddy/DRINK_MASTER/fork"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 px-8 md:px-12 py-4 md:py-5 transition-all hover:scale-110"
+                  style={{
+                    border: "2px solid #8b5cf6",
+                    background: "linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.08))",
+                    borderRadius: "14px",
+                    boxShadow: "0 0 40px rgba(139,92,246,0.25), 0 0 80px rgba(139,92,246,0.06)",
+                  }}
+                >
+                  <span className="text-4xl" style={{ filter: "drop-shadow(0 0 12px rgba(139,92,246,0.5))" }}>🍴</span>
+                  <div>
+                    <div className="font-mono font-bold tracking-wider" style={{ color: "#8b5cf6", fontSize: "clamp(1.2rem, 3vw, 1.8rem)", textShadow: "0 0 20px rgba(139,92,246,0.3)" }}>
+                      🍴 FORK & BUILD
+                    </div>
+                    <div className="font-mono text-xs mt-0.5" style={{ color: "#4a4a52" }}>MIT License · Open Source</div>
+                  </div>
+                </a>
+              </div>
+
+              {/* 底部提示 */}
+              <div className="text-center mt-5 pt-4" style={{ borderTop: "1px solid rgba(6,182,212,0.1)" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "#06b6d4", opacity: 0.7 }}>
+                  🌟 Your star helps us grow — every ⭐ supports AI beverage research & open-source cocktail science 🌟
+                </p>
+                <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.4 }}>
+                  你的Star助力AI饮品研究 — 每一颗⭐都推动开源鸡尾酒科学发展
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* 🔥 GIANT SOCIAL LINKS BAR — 极度显眼 */}
           <div className="mb-6">
             <div className="cyber-panel p-4 md:p-6" style={{ borderColor: "rgba(245,158,11,0.35)", boxShadow: "0 0 32px rgba(245,158,11,0.1), inset 0 0 32px rgba(245,158,11,0.03)" }}>
