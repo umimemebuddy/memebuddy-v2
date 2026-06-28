@@ -152,36 +152,106 @@ export default function Home() {
           {/* ===== MARKET MOOD ===== */}
           <MarketMood market={market} todayStr={todayStr} />
 
-          {/* Quick Links Row */}
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <a
-              href="https://instagram.com/umi_jewelry_gemstone"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ig-gemstone-box inline-flex items-center gap-2 px-4 py-2 font-mono font-bold text-sm transition-opacity hover:opacity-80"
-            >
-              <span className="ig-gemstone text-base">💎</span>
-              <span className="ig-gemstone font-bold">umi_jewelry_gemstone</span>
-            </a>
-            <a
-              href="https://x.com/DommeByte"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 font-mono font-bold text-sm transition-opacity hover:opacity-80"
-              style={{ border: "1px solid #8b5cf6", background: "#111218", borderRadius: "6px" }}
-            >
-              <span style={{ color: "#e11d48" }}>𝕏</span>
-              <span style={{ color: "#8b5cf6" }}>DommeByte</span>
-            </a>
-            <a
-              href="https://github.com/umimemebuddy/DRINK_MASTER"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="github-link py-2"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              DRINK MASTER
-            </a>
+          {/* 🔥 GIANT SOCIAL LINKS BAR — 极度显眼 */}
+          <div className="mb-6">
+            <div className="cyber-panel p-4 md:p-6" style={{ borderColor: "rgba(245,158,11,0.35)", boxShadow: "0 0 32px rgba(245,158,11,0.1), inset 0 0 32px rgba(245,158,11,0.03)" }}>
+              <div className="text-center mb-3">
+                <span className="animate-status font-bold text-sm md:text-base tracking-widest" style={{ color: "#f59e0b", textShadow: "0 0 16px rgba(245,158,11,0.4)" }}>
+                  ⚡ FOLLOW & STAR ⚡ 关注我们 ⚡
+                </span>
+              </div>
+              <div className="flex flex-wrap justify-center items-center gap-3 md:gap-5">
+                {/* GitHub — 超级大 */}
+                <a
+                  href="https://github.com/umimemebuddy/DRINK_MASTER"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center gap-2 px-6 md:px-10 py-4 md:py-5 transition-all hover:scale-110"
+                  style={{
+                    border: "2px solid #06b6d4",
+                    background: "linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.08))",
+                    borderRadius: "12px",
+                    boxShadow: "0 0 28px rgba(6,182,212,0.25)",
+                  }}
+                >
+                  <svg width="36" height="36" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4", filter: "drop-shadow(0 0 8px rgba(6,182,212,0.5))" }}>
+                    <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                  <div>
+                    <div className="font-mono font-bold text-lg md:text-2xl tracking-wider" style={{ color: "#06b6d4", textShadow: "0 0 16px rgba(6,182,212,0.4)" }}>⭐ GITHUB</div>
+                    <div className="font-mono text-xs md:text-sm mt-1" style={{ color: "#4a4a52" }}>DRINK_MASTER</div>
+                  </div>
+                </a>
+
+                {/* Instagram — 超级大 */}
+                <a
+                  href="https://instagram.com/umi_jewelry_gemstone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center gap-2 px-6 md:px-10 py-4 md:py-5 transition-all hover:scale-110"
+                  style={{
+                    border: "2px solid #e1306c",
+                    background: "linear-gradient(135deg, rgba(225,48,108,0.1), rgba(131,58,180,0.08))",
+                    borderRadius: "12px",
+                    boxShadow: "0 0 28px rgba(225,48,108,0.25)",
+                  }}
+                >
+                  <span className="text-4xl md:text-5xl" style={{ filter: "drop-shadow(0 0 8px rgba(225,48,108,0.5))" }}>📸</span>
+                  <div>
+                    <div className="font-mono font-bold text-lg md:text-2xl tracking-wider ig-gemstone">INSTAGRAM</div>
+                    <div className="font-mono text-xs md:text-sm mt-1" style={{ color: "#4a4a52" }}>@umi_jewelry_gemstone</div>
+                  </div>
+                </a>
+
+                {/* X/Twitter — 超级大 */}
+                <a
+                  href="https://x.com/DommeByte"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center gap-2 px-6 md:px-10 py-4 md:py-5 transition-all hover:scale-110"
+                  style={{
+                    border: "2px solid #e11d48",
+                    background: "linear-gradient(135deg, rgba(225,29,72,0.1), rgba(139,92,246,0.08))",
+                    borderRadius: "12px",
+                    boxShadow: "0 0 28px rgba(225,29,72,0.25)",
+                  }}
+                >
+                  <span className="text-4xl md:text-5xl" style={{ color: "#e11d48", filter: "drop-shadow(0 0 8px rgba(225,29,72,0.5))" }}>𝕏</span>
+                  <div>
+                    <div className="font-mono font-bold text-lg md:text-2xl tracking-wider" style={{ color: "#e11d48", textShadow: "0 0 12px rgba(225,29,72,0.3)" }}>𝕏 TWITTER</div>
+                    <div className="font-mono text-xs md:text-sm mt-1" style={{ color: "#4a4a52" }}>@DommeByte</div>
+                  </div>
+                </a>
+
+                {/* Telegram — 超级大 */}
+                <a
+                  href="https://t.me/Yyuzuz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center gap-2 px-6 md:px-10 py-4 md:py-5 transition-all hover:scale-110"
+                  style={{
+                    border: "2px solid #229ED9",
+                    background: "linear-gradient(135deg, rgba(34,158,217,0.1), rgba(0,136,204,0.08))",
+                    borderRadius: "12px",
+                    boxShadow: "0 0 28px rgba(34,158,217,0.25)",
+                  }}
+                >
+                  <span className="text-4xl md:text-5xl" style={{ filter: "drop-shadow(0 0 8px rgba(34,158,217,0.5))" }}>✈️</span>
+                  <div>
+                    <div className="font-mono font-bold text-lg md:text-2xl tracking-wider" style={{ color: "#229ED9", textShadow: "0 0 12px rgba(34,158,217,0.3)" }}>TELEGRAM</div>
+                    <div className="font-mono text-xs md:text-sm mt-1" style={{ color: "#4a4a52" }}>@Yyuzuz</div>
+                  </div>
+                </a>
+              </div>
+              <div className="text-center mt-4 pt-3" style={{ borderTop: "1px solid rgba(245,158,11,0.1)" }}>
+                <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#f59e0b", opacity: 0.7 }}>
+                  🌟 Star us on GitHub · Follow on IG & X · Join Telegram for collab 🌟
+                </p>
+                <p className="cn-text text-xs mt-1" style={{ fontWeight: 400, opacity: 0.4 }}>
+                  GitHub星标 · Instagram关注 · X追踪 · Telegram合作
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* ===== PARTNER BANNER ===== */}
@@ -272,14 +342,28 @@ export default function Home() {
               <span className="ai-badge">AI</span>
               <span style={{ color: "#6b6b70" }}>MEMEBUDDY.UK © 2026</span>
             </div>
-            <div className="flex items-center gap-4">
-              <a href="https://instagram.com/umi_jewelry_gemstone" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" style={{ color: "#8b5cf6" }}>💎 IG</a>
-              <a href="https://x.com/DommeByte" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" style={{ color: "#e11d48" }}>𝕏</a>
+            <div className="flex items-center gap-3">
+              <a href="https://github.com/umimemebuddy/DRINK_MASTER" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+                style={{ border: "1.5px solid #06b6d4", background: "rgba(6,182,212,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(6,182,212,0.2)", color: "#06b6d4" }}>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>⭐ GITHUB
+              </a>
+              <a href="https://instagram.com/umi_jewelry_gemstone" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-2.5 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+                style={{ border: "1.5px solid #e1306c", background: "rgba(225,48,108,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(225,48,108,0.15)" }}>
+                📸<span className="ig-gemstone">IG</span>
+              </a>
+              <a href="https://x.com/DommeByte" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-2.5 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+                style={{ border: "1.5px solid #e11d48", background: "rgba(225,29,72,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(225,29,72,0.15)", color: "#e11d48" }}>
+                𝕏
+              </a>
+              <a href="https://t.me/Yyuzuz" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-2.5 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+                style={{ border: "1.5px solid #229ED9", background: "rgba(34,158,217,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(34,158,217,0.15)", color: "#229ED9" }}>
+                ✈️ TG
+              </a>
+              <span style={{ color: "#2a2a35" }}>│</span>
               <Link href="/recipes" className="hover:opacity-70" style={{ color: "#06b6d4" }}>DRINKS</Link>
               <Link href="/journal" className="hover:opacity-70" style={{ color: "#8b5cf6" }}>JOURNAL</Link>
               <Link href="/partner" className="hover:opacity-70" style={{ color: "#f59e0b" }}>PARTNER</Link>
               <Link href="/about" className="hover:opacity-70" style={{ color: "#e11d48" }}>ABOUT</Link>
-              <a href="https://github.com/umimemebuddy/DRINK_MASTER" target="_blank" rel="noopener noreferrer" className="github-link">GITHUB</a>
             </div>
             <div className="flex items-center gap-2" style={{ color: "#6b6b70" }}>
               <span style={{ color: "#06b6d4" }}>🧪</span>

@@ -320,30 +320,126 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* GitHub CTA */}
+        {/* 🔥 GIANT GITHUB CTA — 超级巨大 */}
         <div className="mb-12">
-          <div className="cyber-panel p-6 text-center">
-            <p style={{ color: "#6b6b70" }} className="font-mono text-xs mb-3">▸ JOIN THE AI COMMUNITY</p>
+          <div className="cyber-panel p-8 md:p-10 text-center" style={{ borderColor: "rgba(6,182,212,0.3)", boxShadow: "0 0 48px rgba(6,182,212,0.12), inset 0 0 48px rgba(6,182,212,0.03)" }}>
+            <div className="mb-5">
+              <span className="animate-status text-lg md:text-xl font-bold tracking-widest" style={{ color: "#f59e0b", textShadow: "0 0 20px rgba(245,158,11,0.4)" }}>
+                ⚡ JOIN THE AI COMMUNITY ⚡
+              </span>
+              <p className="cn-text text-sm mt-1" style={{ opacity: 0.5 }}>加入AI调酒社区</p>
+            </div>
             <a
               href="https://github.com/umimemebuddy/DRINK_MASTER"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 font-mono font-bold text-sm transition-all"
-              style={{ border: "1px solid #06b6d4", color: "#06b6d4", background: "#111218", borderRadius: "4px" }}
+              className="group inline-flex flex-col items-center gap-4 px-10 md:px-16 py-6 md:py-8 transition-all hover:scale-110"
+              style={{
+                border: "3px solid #06b6d4",
+                background: "linear-gradient(135deg, rgba(6,182,212,0.12), rgba(139,92,246,0.1))",
+                borderRadius: "16px",
+                boxShadow: "0 0 40px rgba(6,182,212,0.3), 0 0 80px rgba(6,182,212,0.1)",
+              }}
             >
-              <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              DRINK MASTER on GitHub
+              <svg width="56" height="56" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4", filter: "drop-shadow(0 0 16px rgba(6,182,212,0.6))" }}>
+                <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              <div>
+                <div className="font-mono font-bold text-2xl md:text-4xl tracking-wider" style={{ color: "#06b6d4", textShadow: "0 0 24px rgba(6,182,212,0.5)" }}>
+                  ⭐ STAR US ON GITHUB
+                </div>
+                <div className="font-mono text-lg md:text-xl mt-2" style={{ color: "#8b5cf6" }}>
+                  DRINK_MASTER
+                </div>
+              </div>
             </a>
-            <p style={{ color: "#6b6b70" }} className="text-xs mt-3">github.com/umimemebuddy/DRINK_MASTER</p>
+            <div className="mt-5 flex flex-wrap justify-center gap-4">
+              <p className="font-mono text-base md:text-lg" style={{ color: "#f59e0b" }}>
+                🔗 github.com/umimemebuddy/DRINK_MASTER
+              </p>
+            </div>
+            <div className="mt-4 flex justify-center gap-4">
+              <span className="font-mono text-xs px-3 py-1" style={{ border: "1px solid #06b6d4", borderRadius: "4px", color: "#06b6d4" }}>⭐ Star</span>
+              <span className="font-mono text-xs px-3 py-1" style={{ border: "1px solid #8b5cf6", borderRadius: "4px", color: "#8b5cf6" }}>🍴 Fork</span>
+              <span className="font-mono text-xs px-3 py-1" style={{ border: "1px solid #10b981", borderRadius: "4px", color: "#10b981" }}>👀 Watch</span>
+              <span className="font-mono text-xs px-3 py-1" style={{ border: "1px solid #f59e0b", borderRadius: "4px", color: "#f59e0b" }}>🤝 Contribute</span>
+            </div>
           </div>
         </div>
 
-        {/* Contact */}
+        {/* 🔥 Contact — 超级社交链接 */}
         <div className="mb-12">
-          <p className="font-mono text-xs tracking-wider mb-4" style={{ color: "#06b6d4", borderBottom: "1px solid #2a2a35", paddingBottom: "4px" }}>
-            CONTACT │ 联系我们
+          <p className="font-mono text-base tracking-wider mb-4" style={{ color: "#f59e0b", borderBottom: "2px solid rgba(245,158,11,0.3)", paddingBottom: "6px", textShadow: "0 0 12px rgba(245,158,11,0.3)" }}>
+            ⚡ CONTACT & FOLLOW ⚡ │ 联系我们
           </p>
-          <div className="terminal-card p-5">
+          <div className="terminal-card p-6">
+            {/* Giant Social Buttons */}
+            <div className="flex flex-wrap justify-center gap-4 mb-5 pb-5" style={{ borderBottom: "1px solid #1e1e28" }}>
+              <a
+                href="https://github.com/umimemebuddy/DRINK_MASTER"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-4 transition-all hover:scale-110"
+                style={{
+                  border: "2px solid #06b6d4",
+                  background: "linear-gradient(135deg, rgba(6,182,212,0.1), rgba(139,92,246,0.08))",
+                  borderRadius: "12px",
+                  boxShadow: "0 0 24px rgba(6,182,212,0.2)",
+                }}
+              >
+                <svg width="28" height="28" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4" }}>
+                  <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                <span className="font-mono font-bold text-lg md:text-xl" style={{ color: "#06b6d4" }}>⭐ GITHUB</span>
+              </a>
+              <a
+                href="https://instagram.com/umi_jewelry_gemstone"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-4 transition-all hover:scale-110"
+                style={{
+                  border: "2px solid #e1306c",
+                  background: "linear-gradient(135deg, rgba(225,48,108,0.1), rgba(131,58,180,0.08))",
+                  borderRadius: "12px",
+                  boxShadow: "0 0 24px rgba(225,48,108,0.2)",
+                }}
+              >
+                <span className="text-3xl">📸</span>
+                <span className="font-mono font-bold text-lg md:text-xl ig-gemstone">INSTAGRAM</span>
+              </a>
+              <a
+                href="https://x.com/DommeByte"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-4 transition-all hover:scale-110"
+                style={{
+                  border: "2px solid #e11d48",
+                  background: "linear-gradient(135deg, rgba(225,29,72,0.1), rgba(139,92,246,0.08))",
+                  borderRadius: "12px",
+                  boxShadow: "0 0 24px rgba(225,29,72,0.2)",
+                }}
+              >
+                <span className="text-3xl font-bold" style={{ color: "#e11d48" }}>𝕏</span>
+                <span className="font-mono font-bold text-lg md:text-xl" style={{ color: "#e11d48" }}>𝕏 TWITTER</span>
+              </a>
+              <a
+                href="https://t.me/Yyuzuz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-4 transition-all hover:scale-110"
+                style={{
+                  border: "2px solid #229ED9",
+                  background: "linear-gradient(135deg, rgba(34,158,217,0.1), rgba(0,136,204,0.08))",
+                  borderRadius: "12px",
+                  boxShadow: "0 0 24px rgba(34,158,217,0.2)",
+                }}
+              >
+                <span className="text-3xl">✈️</span>
+                <span className="font-mono font-bold text-lg md:text-xl" style={{ color: "#229ED9" }}>TELEGRAM</span>
+              </a>
+            </div>
+
+            {/* Detail contact info */}
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 border flex items-center justify-center text-xs font-bold" style={{ borderColor: "rgba(6,182,212,0.2)", color: "#06b6d4", background: "#111218", borderRadius: "3px" }}>
@@ -361,24 +457,6 @@ export default function AboutPage() {
                 <div>
                   <p style={{ color: "#e0dcd0" }} className="text-sm">hello@memebuddy.uk</p>
                   <p className="cn-text text-xs" style={{ fontWeight: 400, color: "#f59e0b", opacity: 0.6 }}>邮件</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 border flex items-center justify-center text-xs font-bold" style={{ borderColor: "rgba(245,158,11,0.2)", color: "#f59e0b", background: "#111218", borderRadius: "3px" }}>
-                  SNS
-                </div>
-                <div>
-                  <p style={{ color: "#e0dcd0" }} className="text-sm">@memebuddy_uk</p>
-                  <p className="cn-text text-xs" style={{ fontWeight: 400, color: "#f59e0b", opacity: 0.6 }}>社交</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="ig-gemstone-box flex items-center justify-center text-xs" style={{ width: "32px", height: "32px", borderRadius: "3px" }}>
-                  <span className="ig-gemstone">💎</span>
-                </div>
-                <div>
-                  <p><a href="https://instagram.com/umi_jewelry_gemstone" target="_blank" rel="noopener noreferrer" className="ig-gemstone text-sm font-bold">umi_jewelry_gemstone</a></p>
-                  <p className="cn-text text-xs" style={{ fontWeight: 400, color: "#f59e0b", opacity: 0.6 }}>Instagram</p>
                 </div>
               </div>
             </div>

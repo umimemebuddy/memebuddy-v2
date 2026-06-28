@@ -35,22 +35,39 @@ export default function Footer() {
             <span style={{ color: "#6b6b70" }}>MEMEBUDDY.UK © 2026</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://instagram.com/umi_jewelry_gemstone" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" style={{ color: "#8b5cf6" }}>💎 IG</a>
-            <a href="https://x.com/DommeByte" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" style={{ color: "#e11d48" }}>𝕏</a>
-            <Link href="/recipes" className="hover:opacity-70 transition-opacity" style={{ color: "#06b6d4" }}>🧪 DRINKS</Link>
-            <Link href="/journal" className="hover:opacity-70 transition-opacity" style={{ color: "#8b5cf6" }}>JOURNAL</Link>
-            <Link href="/about" className="hover:opacity-70 transition-opacity" style={{ color: "#e11d48" }}>ABOUT</Link>
-            <Link href="/partner" className="hover:opacity-70 transition-opacity" style={{ color: "#f59e0b" }}>✦ PARTNER</Link>
+            {/* 🔥 GIANT SOCIAL */}
             <a
               href="https://github.com/umimemebuddy/DRINK_MASTER"
               target="_blank"
               rel="noopener noreferrer"
-              className="github-link"
-              title="DRINK MASTER on GitHub"
+              className="flex items-center gap-1.5 px-3 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+              style={{
+                border: "1.5px solid #06b6d4",
+                background: "rgba(6,182,212,0.08)",
+                borderRadius: "6px",
+                boxShadow: "0 0 14px rgba(6,182,212,0.2)",
+              }}
             >
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              GITHUB
+              <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4" }}><path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span className="font-bold" style={{ color: "#06b6d4" }}>⭐ GITHUB</span>
             </a>
+            <a href="https://instagram.com/umi_jewelry_gemstone" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-3 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+              style={{ border: "1.5px solid #e1306c", background: "rgba(225,48,108,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(225,48,108,0.15)" }}>
+              <span className="text-lg">📸</span><span className="ig-gemstone">IG</span>
+            </a>
+            <a href="https://x.com/DommeByte" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-3 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+              style={{ border: "1.5px solid #e11d48", background: "rgba(225,29,72,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(225,29,72,0.15)", color: "#e11d48" }}>
+              <span className="text-lg">𝕏</span>
+            </a>
+            <a href="https://t.me/Yyuzuz" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-3 py-1.5 transition-all hover:scale-110 font-bold text-sm"
+              style={{ border: "1.5px solid #229ED9", background: "rgba(34,158,217,0.08)", borderRadius: "6px", boxShadow: "0 0 14px rgba(34,158,217,0.15)", color: "#229ED9" }}>
+              <span className="text-lg">✈️</span>TG
+            </a>
+            <span style={{ color: "#2a2a35" }}>│</span>
+            <Link href="/recipes" className="hover:opacity-70 transition-opacity" style={{ color: "#06b6d4" }}>🧪 DRINKS</Link>
+            <Link href="/journal" className="hover:opacity-70 transition-opacity" style={{ color: "#8b5cf6" }}>JOURNAL</Link>
+            <Link href="/about" className="hover:opacity-70 transition-opacity" style={{ color: "#e11d48" }}>ABOUT</Link>
+            <Link href="/partner" className="hover:opacity-70 transition-opacity" style={{ color: "#f59e0b" }}>✦ PARTNER</Link>
           </div>
           <div className="flex items-center gap-2" style={{ color: "#6b6b70" }}>
             <span style={{ color: "#06b6d4" }}>◈</span>
