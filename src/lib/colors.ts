@@ -1,44 +1,41 @@
 export const C = {
-  bg: "var(--color-background)",
-  bgCard: "var(--color-card-bg)",
-  fg: "var(--color-foreground)",
-  muted: "var(--color-muted)",
-  mutedDim: "var(--color-muted-dim)",
-  mutedFaint: "var(--color-muted-faint)",
-  green: "var(--color-neon-green)",
-  red: "var(--color-neon-red)",
-  orange: "var(--color-gmgn-orange)",
-  lime: "var(--color-gmgn-lime)",
-  yellow: "var(--color-gmgn-yellow)",
-  cyan: "var(--color-neon-cyan)",
-  pink: "var(--color-neon-pink)",
-  purple: "var(--color-neon-purple)",
-  amber: "var(--color-neon-amber)",
-  border: "var(--color-card-border)",
-  borderBright: "rgba(255,107,0,0.35)",
+  bg: "#0b0c10",
+  bgCard: "#111218",
+  fg: "#e0dcd0",
+  muted: "#6b6b70",
+  mutedDim: "#3d3d44",
+  mutedFaint: "#242430",
+  green: "#10b981",
+  red: "#e11d48",
+  orange: "#f59e0b",
+  lime: "#10b981",
+  yellow: "#fbbf24",
+  cyan: "#06b6d4",
+  pink: "#e11d48",
+  purple: "#8b5cf6",
+  amber: "#f59e0b",
+  border: "#2a2a35",
+  borderBright: "rgba(245,158,11,0.35)",
 } as const;
 
-// CSS custom properties don't work in inline `color` styles directly for opacity/rgba.
-// For those cases, use the RGB decomposition values.
 const RGB_MAP: Record<string, string> = {
-  green: "57,255,20",
-  red: "255,59,59",
-  orange: "255,107,0",
-  pink: "255,45,149",
-  lime: "200,255,0",
-  yellow: "255,229,0",
-  cyan: "0,240,255",
-  amber: "255,184,0",
-  purple: "176,38,255",
-  muted: "68,68,85",
+  green: "16,185,129",
+  red: "225,29,72",
+  orange: "245,158,11",
+  pink: "225,29,72",
+  lime: "16,185,129",
+  yellow: "251,191,36",
+  cyan: "6,182,212",
+  amber: "245,158,11",
+  purple: "139,92,246",
+  muted: "107,107,112",
 };
 
 export function rgb(colorKey: string, alpha: number): string {
   const values = RGB_MAP[colorKey];
   if (!values) {
-    // Fallback: try to parse from CSS variable (not ideal but safe)
-    console.warn(`Unknown color key "${colorKey}", falling back to orange`);
-    return `rgba(255,107,0,${alpha})`;
+    console.warn(`Unknown color key "${colorKey}", falling back to amber`);
+    return `rgba(245,158,11,${alpha})`;
   }
   return `rgba(${values},${alpha})`;
 }

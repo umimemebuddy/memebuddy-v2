@@ -2,16 +2,15 @@ import { coinData } from "@/components/Home/TickerBar";
 import { abvToLever, leverLabel, leverFillClass } from "@/lib/lever";
 import Link from "next/link";
 
-/* ── 合约数据：纯计算派生，零外部依赖 ── */
 interface Contract {
   id: string;
   symbol: string;
   nameEn: string;
   name: string;
-  type: string;       // PERP / FUTURE
-  multiplier: string; // 杠杆倍率
-  fundingRate: string; // 资金费率
-  oi: string;         // Open Interest
+  type: string;
+  multiplier: string;
+  fundingRate: string;
+  oi: string;
   expiry: string;
   lever: number;
   change: number;
@@ -40,47 +39,44 @@ const contracts: Contract[] = coinData.filter(c => c.category === "trading").sli
 export function ContractsPanel() {
   return (
     <section className="py-4">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="bar-header flex items-center gap-2 mb-4 font-mono">
-          <span className="bloomberg-cyan font-bold animate-urgent">📜 PERP</span>
-          <span className="bloomberg-orange font-bold text-sm">/ SMART CONTRACTS</span>
-          <span className="cn-text text-xs">永续合约</span>
-          <span style={{ color: "#555" }} className="text-xs ml-auto">
+          <span className="animate-status font-bold" style={{ color: "#06b6d4" }}>📜 PERP</span>
+          <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "0.85rem" }}>/ AI SMART CONTRACTS</span>
+          <span className="cn-text text-xs">AI永续合约</span>
+          <span style={{ color: "#6b6b70" }} className="text-xs ml-auto">
             {contracts.length} CONTRACTS · LIVE OI · FUNDING RATE
           </span>
         </div>
 
-        {/* Contract cards — 2-col grid for perf (no table) */}
+        {/* Contract cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {contracts.map((ct) => {
             const lbl = leverLabel(ct.lever);
-            const fundingColor = ct.fundingRate.startsWith("+") ? "bloomberg-green" : ct.fundingRate.startsWith("-") ? "bloomberg-red" : "";
+            const fundingColor = ct.fundingRate.startsWith("+") ? "#10b981" : ct.fundingRate.startsWith("-") ? "#e11d48" : "#6b6b70";
             return (
               <Link key={ct.id} href={`/recipes/${ct.id}`} className="group block">
                 <div className="bar-card p-3">
-                  {/* Row 1: Symbol + Type + Multiplier */}
                   <div className="flex items-center gap-2 font-mono text-xs mb-1">
-                    <span className="bloomberg-orange font-bold">{ct.symbol}</span>
-                    <span className="bloomberg-cyan font-bold" style={{ fontSize: "0.65rem" }}>
+                    <span style={{ color: "#f59e0b", fontWeight: 700 }}>{ct.symbol}</span>
+                    <span style={{ color: "#06b6d4", fontWeight: 700, fontSize: "0.65rem" }}>
                       {ct.type === "PERP" ? "∞ PERP" : ct.expiry}
                     </span>
                     <span className={`${lbl.cls} font-bold`} style={{ fontSize: "0.65rem" }}>
                       {ct.multiplier}
                     </span>
-                    <span className={ct.change > 0 ? "bloomberg-green" : "bloomberg-red"} style={{ fontWeight: 700 }}>
+                    <span style={{ color: ct.change > 0 ? "#10b981" : "#e11d48", fontWeight: 700 }}>
                       {ct.change > 0 ? "+" : ""}{ct.change}%
                     </span>
                   </div>
-                  {/* Row 2: Name + Funding + OI */}
                   <div className="flex items-center gap-2 font-mono text-xs">
-                    <span className="bloomberg-amber font-bold" style={{ fontSize: "0.75rem" }}>{ct.nameEn}</span>
+                    <span style={{ color: "#06b6d4", fontWeight: 700, fontSize: "0.75rem" }}>{ct.nameEn}</span>
                     <span className="cn-text" style={{ fontSize: "0.65rem" }}>{ct.name}</span>
                   </div>
                   <div className="flex items-center gap-3 font-mono mt-1" style={{ fontSize: "0.6rem" }}>
-                    <span className={fundingColor} style={{ fontWeight: 600 }}>F:{ct.fundingRate}</span>
-                    <span style={{ color: "#ffb800" }}>OI:{ct.oi}</span>
-                    {/* Lever bar */}
+                    <span style={{ color: fundingColor, fontWeight: 600 }}>F:{ct.fundingRate}</span>
+                    <span style={{ color: "#f59e0b" }}>OI:{ct.oi}</span>
                     <div className="lever-bar w-12">
                       <div className={`lever-fill ${leverFillClass(ct.lever)}`} style={{ width: `${ct.lever * 20}%` }} />
                     </div>

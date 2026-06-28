@@ -31,15 +31,15 @@ export function RecipeFilter() {
       <div className="mb-4">
         <input
           type="text"
-          placeholder="🥃 SEARCH / 搜索配方..."
+          placeholder="🧪 AI SEARCH / AI搜索配方..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full border-b px-3 py-2 text-sm font-mono focus:outline-none focus:border-bloomberg-amber"
-          style={{ background: "transparent", borderColor: "#ff8c0030", color: "#e0e0e0" }}
+          className="w-full border-b px-3 py-2 text-sm font-mono focus:outline-none"
+          style={{ background: "transparent", borderColor: "rgba(245,158,11,0.15)", color: "#e0dcd0" }}
         />
       </div>
 
-      {/* Category tabs — bar style */}
+      {/* Category tabs */}
       <div className="mb-6 flex gap-2 flex-wrap">
         <button
           onClick={() => setActiveCategory("all")}
@@ -59,11 +59,11 @@ export function RecipeFilter() {
       </div>
 
       {/* Count */}
-      <p style={{ color: "#ffb800" }} className="text-xs font-mono mb-3">
-        {filteredRecipes.length} drinks on the menu
+      <p style={{ color: "#f59e0b" }} className="text-xs font-mono mb-3">
+        {filteredRecipes.length} AI drinks on the menu
       </p>
 
-      {/* Menu list — thin bar rows with leverage */}
+      {/* Menu list */}
       <div className="flex flex-col gap-1">
         {filteredRecipes.map((recipe) => {
           const catInfo = categoryMap.get(recipe.category);
@@ -74,21 +74,21 @@ export function RecipeFilter() {
             <Link key={recipe.id} href={`/recipes/${recipe.id}`} className="group">
               <div className="bar-card px-4 py-3 flex items-center gap-3">
                 {/* Category icon */}
-                <span className="text-sm shrink-0" style={{ color: "#ffb800" }}>
+                <span className="text-sm shrink-0" style={{ color: "#f59e0b" }}>
                   {catInfo?.icon}
                 </span>
 
                 {/* Name column */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2">
-                    <span className="bloomberg-white text-sm font-bold font-mono tracking-wide truncate">
-                      {recipe.nameEn}
+                    <span className="text-sm font-bold font-mono tracking-wide truncate" style={{ color: "#e0dcd0" }}>
+                      🍹 {recipe.nameEn}
                     </span>
                     <span className="cn-text text-xs truncate">
                       {recipe.name}
                     </span>
                   </div>
-                  <p style={{ color: "#888" }} className="text-xs truncate font-mono mt-0.5">
+                  <p style={{ color: "#6b6b70" }} className="text-xs truncate font-mono mt-0.5">
                     {recipe.descriptionEn}
                   </p>
                 </div>
@@ -120,8 +120,8 @@ export function RecipeFilter() {
       {/* Empty */}
       {filteredRecipes.length === 0 && (
         <div className="text-center py-16">
-          <p className="bar-neon bar-neon-orange font-mono text-sm mb-1">未找到配方 NO RESULTS</p>
-          <p style={{ color: "#555" }} className="text-xs font-mono">试试其他关键词</p>
+          <p className="font-mono text-sm mb-1" style={{ color: "#f59e0b" }}>未找到配方 NO RESULTS</p>
+          <p style={{ color: "#6b6b70" }} className="text-xs font-mono">试试其他关键词</p>
         </div>
       )}
     </>

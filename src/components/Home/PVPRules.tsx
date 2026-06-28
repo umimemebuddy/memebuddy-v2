@@ -12,46 +12,46 @@ const rules = [
 ] as const;
 
 const ruleColorMap: Record<string, string> = {
-  red: "#ff3b3b",
-  orange: "#ff8c00",
-  purple: "#b026ff",
-  green: "#00ff88",
-  lime: "#c8ff00",
-  cyan: "#00d4ff",
-  amber: "#ffb800",
-  yellow: "#ffe500",
-  pink: "#ff2d95",
+  red: "#e11d48",
+  orange: "#f59e0b",
+  purple: "#8b5cf6",
+  green: "#10b981",
+  lime: "#10b981",
+  cyan: "#06b6d4",
+  amber: "#f59e0b",
+  yellow: "#fbbf24",
+  pink: "#e11d48",
 };
 
 export function PVPRules() {
   return (
     <section className="py-4">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="bar-divider mb-4" />
 
         <div className="bar-header mb-3 flex items-center gap-3">
-          <span className="bar-neon bar-neon-red animate-urgent font-mono font-bold text-lg">⚠</span>
-          <span className="gradient-text-pvp font-mono text-lg font-bold tracking-wider">PVP BAR RULES</span>
-          <span className="cn-text font-mono" style={{ fontSize: "0.8rem" }}>// PVP酒吧法则</span>
-          <span style={{ color: "#ffb800", fontSize: "0.7rem" }}>🥃 BOOZE & LEVERAGE</span>
+          <span className="font-mono font-bold text-lg animate-status" style={{ color: "#e11d48" }}>⚠</span>
+          <span className="gradient-text-pvp font-mono text-lg font-bold tracking-wider">DRINK BAR RULES</span>
+          <span className="cn-text font-mono" style={{ fontSize: "0.8rem" }}>// AI调酒法则</span>
+          <span style={{ color: "#f59e0b", fontSize: "0.7rem" }}>🥃 AI BOOZE & LEVERAGE</span>
         </div>
 
         <div className="space-y-0 font-mono">
           {rules.map((rule, i) => {
-            const color = ruleColorMap[rule.colorKey] || "#ff8c00";
+            const color = ruleColorMap[rule.colorKey] || "#f59e0b";
             return (
-              <div key={rule.n} className="flex items-center gap-3 py-1.5 hover-bar" style={{ borderBottom: "1px solid #ff8c0010" }}>
+              <div key={rule.n} className="flex items-center gap-3 py-1.5 hover-bar" style={{ borderBottom: "1px solid rgba(245,158,11,0.05)" }}>
                 <span className="text-sm font-bold tabular-nums" style={{ color, minWidth: "2rem" }}>
                   {rule.n}
                 </span>
-                <span className="text-sm" style={{ color: "#e0e0e0", flex: 1 }}>
+                <span className="text-sm" style={{ color: "#e0dcd0", flex: 1 }}>
                   {rule.en}
                 </span>
-                <span style={{ color: "#2a1a00" }}>│</span>
+                <span style={{ color: "#3d3d44" }}>│</span>
                 <span className="cn-text text-sm" style={{ color }}>
                   {rule.cn}
                 </span>
-                <span className="text-xs" style={{ color: i < 4 ? "#ff3b3b" : "#00ff88", opacity: 0.6 }}>
+                <span className="text-xs" style={{ color: i < 4 ? "#e11d48" : "#10b981", opacity: 0.6 }}>
                   {i < 4 ? "🔴" : "🟢"}
                 </span>
               </div>
@@ -59,14 +59,14 @@ export function PVPRules() {
           })}
         </div>
 
-        <div className="mt-4 flex items-center justify-center gap-3 font-mono text-xs" style={{ color: "#555" }}>
-          <span className="bar-neon bar-neon-green font-bold">GMGN</span>
+        <div className="mt-4 flex items-center justify-center gap-3 font-mono text-xs" style={{ color: "#6b6b70" }}>
+          <span className="font-bold" style={{ color: "#10b981" }}>DRINK MASTER</span>
           <span>│</span>
-          <span className="bar-neon bar-neon-orange font-bold">booze over bs</span>
+          <span className="font-bold" style={{ color: "#f59e0b" }}>AI booze over bs</span>
           <span>│</span>
-          <span className="bar-neon bar-neon-red font-bold animate-urgent">PVP</span>
+          <span className="animate-status font-bold" style={{ color: "#e11d48" }}>PVP</span>
           <span>│</span>
-          <span className="cn-text" style={{ fontSize: "0.75rem" }}>酒精不退路</span>
+          <span className="cn-text" style={{ fontSize: "0.75rem" }}>AI算法不退路</span>
         </div>
       </div>
     </section>

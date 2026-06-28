@@ -1,60 +1,112 @@
 @import "tailwindcss";
 
+/* ============================================================
+   DRINK_MASTER — AI BEVERAGE DESIGN LAB
+   AI 人工智能饮料企业 — 赛博复古简洁 × 饮料液体感
+   ============================================================ */
+
 @theme inline {
-  --color-background: #050510;
-  --color-foreground: #c8d6e5;
-  --color-muted: #4a5568;
-  --color-muted-dim: #2d3748;
-  --color-muted-faint: #1a2035;
-  --color-card-bg: #0a0a1a;
-  --color-card-border: #1e2a45;
-  /* DRINK_MASTER 赛博科技色系 */
-  --color-cyber-primary: #00e5ff;
-  --color-cyber-secondary: #7c3aed;
-  --color-cyber-accent: #f72585;
-  --color-cyber-green: #00f5d4;
-  --color-cyber-gold: #f0c040;
-  --color-cyber-blue: #4361ee;
-  --color-cyber-dark: #0a0a1a;
-  --color-cyber-panel: #0f0f23;
-  --color-cyber-border: #1e2a45;
-  --color-cyber-text: #c8d6e5;
-  --color-cyber-dim: #5a6d8a;
-  --color-cyber-glow: rgba(0,229,255,0.15);
-  --color-cyber-scanline: rgba(0,229,255,0.03);
-  /* 保留兼容色 */
-  --color-neon-cyan: #00e5ff;
-  --color-neon-pink: #f72585;
-  --color-neon-purple: #7c3aed;
-  --color-neon-amber: #f0c040;
-  --color-neon-green: #00f5d4;
-  --color-neon-red: #ff4757;
-  --color-gmgn-orange: #ff6b00;
-  --color-gmgn-yellow: #ffe500;
-  --color-gmgn-lime: #c8ff00;
-  --color-bloomberg-orange: #f0c040;
-  --color-bloomberg-green: #00f5d4;
-  --color-bloomberg-red: #ff4757;
-  --color-bloomberg-cyan: #00e5ff;
-  --color-bloomberg-yellow: #ffe500;
-  --color-bloomberg-white: #ffffff;
-  --color-cn-text: #f0c040;
-  --color-amber-glow: #f0c040;
-  --color-whiskey: #c85500;
-  --color-lever-green: #00f5d4;
-  --color-lever-red: #ff4757;
+  /* ── 核心底色 ── */
+  --color-background: #0b0c10;
+  --color-surface: #111218;
+  --color-surface-raised: #161822;
+  --color-foreground: #e0dcd0;
+  --color-muted: #6b6b70;
+  --color-muted-dim: #3d3d44;
+  --color-muted-faint: #242430;
+
+  /* ── 饮料液体色彩 ── (drink-inspired palette) */
+  --color-citrus: #f59e0b;       /* 橙汁 · 柠檬黄 */
+  --color-citrus-glow: rgba(245, 158, 11, 0.25);
+  --color-mint: #10b981;         /* 薄荷绿 · 青柠 */
+  --color-mint-glow: rgba(16, 185, 129, 0.2);
+  --color-blue-curacao: #06b6d4; /* 蓝柑 · 海洋蓝 */
+  --color-blue-glow: rgba(6, 182, 212, 0.2);
+  --color-grenadine: #e11d48;    /* 石榴红 · 蔓越莓 */
+  --color-grenadine-glow: rgba(225, 29, 72, 0.2);
+  --color-cola: #c2410c;         /* 可乐棕 */
+  --color-tea: #a16207;          /* 茶色琥珀 */
+  --color-tea-glow: rgba(161, 98, 7, 0.2);
+  --color-lavender: #8b5cf6;     /* 紫罗兰 */
+  --color-coconut: #f5f0e8;      /* 椰奶白 */
+
+  /* ── AI 科技点缀 ── */
+  --color-ai-primary: #06b6d4;   /* 主 AI 色 — 蓝柑青 */
+  --color-ai-secondary: #8b5cf6; /* 副 AI 色 — 紫罗兰 */
+  --color-ai-glow: rgba(6, 182, 212, 0.15);
+
+  /* ── 功能色 ── */
+  --color-bull: #10b981;         /* 涨 — 薄荷绿 */
+  --color-bear: #e11d48;         /* 跌 — 石榴红 */
+  --color-warn: #f59e0b;         /* 警告 — 橙汁黄 */
+
+  /* ── 兼容别名 ── */
+  --color-amber: #f59e0b;
+  --color-teal: #06b6d4;
+  --color-crimson: #e11d48;
+  --color-violet: #8b5cf6;
+  --color-lime: #10b981;
+  --color-gold: #fbbf24;
+
+  --color-neon-cyan: #06b6d4;
+  --color-neon-pink: #e11d48;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-amber: #f59e0b;
+  --color-neon-green: #10b981;
+  --color-neon-red: #e11d48;
+
+  --color-bloomberg-orange: #f59e0b;
+  --color-bloomberg-green: #10b981;
+  --color-bloomberg-red: #e11d48;
+  --color-bloomberg-cyan: #06b6d4;
+  --color-bloomberg-yellow: #fbbf24;
+  --color-bloomberg-white: #f5f0e8;
+  --color-bloomberg-amber: #f59e0b;
+  --color-bloomberg-lime: #10b981;
+  --color-bloomberg-purple: #8b5cf6;
+  --color-bloomberg-pink: #e11d48;
+
+  --color-gmgn-orange: #f59e0b;
+  --color-gmgn-yellow: #fbbf24;
+  --color-gmgn-lime: #10b981;
+
+  --color-card-bg: #111218;
+  --color-card-border: #2a2a35;
+
+  --color-cyber-primary: #06b6d4;
+  --color-cyber-secondary: #8b5cf6;
+  --color-cyber-accent: #f59e0b;
+  --color-cyber-green: #10b981;
+  --color-cyber-gold: #fbbf24;
+  --color-cyber-blue: #8b5cf6;
+  --color-cyber-dark: #111218;
+  --color-cyber-panel: #111218;
+  --color-cyber-border: #2a2a35;
+  --color-cyber-text: #e0dcd0;
+  --color-cyber-dim: #6b6b70;
+  --color-cyber-glow: rgba(6, 182, 212, 0.12);
+  --color-cyber-scanline: rgba(6, 182, 212, 0.02);
+
+  --color-cn-text: #f59e0b;
+  --color-whiskey: #c2410c;
+  --color-lever-green: #10b981;
+  --color-lever-red: #e11d48;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* === BASE: 赛博暗色终端 === */
+/* ============================================================
+   BASE — 深色底 + 饮料微光
+   ============================================================ */
 body {
-  background: #050510 !important;
-  color: #c8d6e5 !important;
-  font-family: var(--font-mono), ui-monospace, "Consolas", "JetBrains Mono", monospace;
+  background: #0b0c10 !important;
+  color: #e0dcd0 !important;
+  font-family: var(--font-mono), "Courier New", "Consolas", monospace;
+  letter-spacing: 0.02em;
 }
 
-/* 全局扫描线叠加 (可选, 极淡) */
+/* 极淡 CRT 扫描线 */
 body::before {
   content: "";
   position: fixed;
@@ -62,53 +114,48 @@ body::before {
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 2px,
-    rgba(0,229,255,0.015) 2px,
-    rgba(0,229,255,0.015) 4px
+    transparent 4px,
+    rgba(6, 182, 212, 0.006) 4px,
+    rgba(6, 182, 212, 0.006) 8px
   );
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
-/* 网格背景点阵 */
+/* CRT 暗角 */
 body::after {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    radial-gradient(circle, rgba(0,229,255,0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(11, 12, 16, 0.5) 100%);
   pointer-events: none;
   z-index: 9998;
-  opacity: 0.4;
 }
 
 html { scroll-behavior: smooth; }
 
-/* === ACCESSIBILITY: Reduced Motion === */
+/* ── 滚动条 ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0b0c10; }
+::-webkit-scrollbar-thumb { background: rgba(6, 182, 212, 0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+/* ── 无障碍 ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .ticker-content { animation: none !important; }
-  .animate-price-up, .animate-price-down,
-  .animate-urgent, .animate-neon-pulse,
-  .animate-neon-flicker, .animate-bg-pulse,
-  .animate-fade-in-up { animation: none !important; opacity: 1 !important; }
+  .ticker-content, .animate-fade-in-up, .liquid-bg, .bubble { animation: none !important; opacity: 1 !important; }
 }
 
-/* === SCROLLBAR — cyber cyan === */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #050510; }
-::-webkit-scrollbar-thumb { background: #00e5ff40; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
-
-/* === ANIMATIONS === */
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -117,120 +164,91 @@ html { scroll-behavior: smooth; }
   100% { transform: translateX(-50%); }
 }
 
-@keyframes priceFlashUp {
-  0%, 100% { color: #00f5d4; }
-  50% { color: #00e5ff; }
-}
-
-@keyframes priceFlashDown {
-  0%, 100% { color: #ff4757; }
-  50% { color: #f72585; }
-}
-
-@keyframes urgentBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
 @keyframes cursorBlink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-@keyframes neonFlicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 24%, 55% { opacity: 0.4; }
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
-/* === CYBERPUNK ANIMATIONS === */
-@keyframes cyberScan {
+@keyframes scanLine {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(200%); }
 }
 
-@keyframes cyberPulse {
-  0%, 100% { box-shadow: 0 0 8px rgba(0,229,255,0.2), 0 0 20px rgba(0,229,255,0.1); }
-  50% { box-shadow: 0 0 16px rgba(0,229,255,0.4), 0 0 40px rgba(0,229,255,0.2); }
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(6, 182, 212, 0.3); }
+  50% { border-color: rgba(6, 182, 212, 0.6); }
 }
 
-@keyframes cyberGlow {
-  0%, 100% { border-color: rgba(0,229,255,0.3); box-shadow: 0 0 6px rgba(0,229,255,0.1); }
-  50% { border-color: rgba(0,229,255,0.6); box-shadow: 0 0 16px rgba(0,229,255,0.25); }
+/* ── 液体气泡动画 ── */
+@keyframes bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 0.3; }
+  100% { transform: translateY(-40px) scale(0.8); opacity: 0; }
 }
 
-@keyframes dataFlow {
+@keyframes liquidFlow {
   0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes hexPulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+@keyframes pourIn {
+  0% { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
 }
 
-@keyframes glitchText {
-  0%, 90%, 100% { transform: translate(0); }
-  92% { transform: translate(-2px, 1px); }
-  94% { transform: translate(2px, -1px); }
-  96% { transform: translate(-1px, 2px); }
+@keyframes liquidShimmer {
+  0% { opacity: 0.4; transform: translateX(-100%); }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.4; transform: translateX(200%); }
 }
 
-@keyframes terminalBoot {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ── 饮料渐变文字动画 ── */
+@keyframes drinkGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes codeRain {
-  0% { opacity: 0; transform: translateY(-20px); }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(20px); }
-}
+.animate-fade-in-up { animation: fadeInUp 0.35s ease-out forwards; }
+.animate-status { animation: statusPulse 2s ease-in-out infinite; }
 
-@keyframes scanLine {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 100%; }
-}
+/* ============================================================
+   TEXT COLORS — 饮料色谱
+   ============================================================ */
+.bloomberg-orange { color: #f59e0b; }
+.bloomberg-green  { color: #10b981; }
+.bloomberg-red    { color: #e11d48; }
+.bloomberg-cyan   { color: #06b6d4; }
+.bloomberg-yellow { color: #fbbf24; }
+.bloomberg-white  { color: #f5f0e8; }
+.bloomberg-amber  { color: #f59e0b; }
+.bloomberg-lime   { color: #10b981; }
+.bloomberg-purple { color: #8b5cf6; }
+.bloomberg-pink   { color: #e11d48; }
+.whiskey          { color: #c2410c; }
+.cn-text          { color: #f59e0b; font-weight: 600; }
 
-.animate-fade-in-up { animation: fadeInUp 0.4s ease-out forwards; }
-.animate-price-up { animation: priceFlashUp 1.2s ease-in-out infinite; }
-.animate-price-down { animation: priceFlashDown 1.2s ease-in-out infinite; }
-.animate-urgent { animation: urgentBlink 1.2s ease-in-out infinite; }
-.animate-cyber-pulse { animation: cyberPulse 2.5s ease-in-out infinite; }
-.animate-cyber-glow { animation: cyberGlow 3s ease-in-out infinite; }
-.animate-glitch { animation: glitchText 4s ease-in-out infinite; }
-.animate-terminal-boot { animation: terminalBoot 0.5s ease-out forwards; }
+.neon-text-cyan   { color: #06b6d4; }
+.neon-text-pink   { color: #e11d48; }
+.neon-text-amber  { color: #f59e0b; }
+.neon-text-green  { color: #10b981; }
+.neon-text-red    { color: #e11d48; }
+.neon-text-orange { color: #f59e0b; }
+.neon-text-lime   { color: #10b981; }
+.neon-text-purple { color: #8b5cf6; }
+.neon-text-yellow { color: #fbbf24; }
 
-/* === BAR TEXT COLORS === */
-.bloomberg-orange { color: #f0c040; }
-.bloomberg-green { color: #00f5d4; }
-.bloomberg-red { color: #ff4757; }
-.bloomberg-cyan { color: #00e5ff; }
-.bloomberg-yellow { color: #ffe500; }
-.bloomberg-white { color: #ffffff; }
-.bloomberg-amber { color: #f0c040; }
-.bloomberg-lime { color: #c8ff00; }
-.bloomberg-purple { color: #7c3aed; }
-.bloomberg-pink { color: #f72585; }
-.whiskey { color: #c85500; }
-
-/* CN text — gold accent */
-.cn-text { color: #f0c040; font-weight: 700; }
-
-/* === NEON TEXT === */
-.neon-text-cyan { color: #00e5ff; }
-.neon-text-pink { color: #f72585; }
-.neon-text-amber { color: #f0c040; }
-.neon-text-green { color: #00f5d4; }
-.neon-text-red { color: #ff4757; }
-.neon-text-orange { color: #ff6b00; }
-.neon-text-lime { color: #c8ff00; }
-.neon-text-purple { color: #7c3aed; }
-.neon-text-yellow { color: #ffe500; }
-
-/* === CYBER GRADIENT TEXT === */
+/* ============================================================
+   GRADIENT TEXT — 饮料色彩渐变
+   ============================================================ */
 .cyber-gradient {
-  background: linear-gradient(135deg, #00e5ff, #7c3aed, #f72585);
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -238,7 +256,7 @@ html { scroll-behavior: smooth; }
 }
 
 .cyber-gradient-green {
-  background: linear-gradient(135deg, #00f5d4, #00e5ff);
+  background: linear-gradient(135deg, #10b981, #06b6d4);
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -246,235 +264,447 @@ html { scroll-behavior: smooth; }
 }
 
 .cyber-gradient-gold {
-  background: linear-gradient(135deg, #f0c040, #ffe500, #f0c040);
+  background: linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b);
   background-size: 200% auto;
-  animation: dataFlow 2s linear infinite;
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* === GRADIENT TEXT === */
 .gradient-text-pvp {
-  background: linear-gradient(135deg, #f0c040, #ffe500, #f0c040);
-  color: transparent; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* === TICKER — GPU-accelerated scroll === */
+/* ── 饮料色渐变文字 (DRINK MASTER 专用) ── */
+.drink-gradient-text {
+  background: linear-gradient(135deg, #06b6d4, #10b981, #f59e0b, #e11d48, #8b5cf6);
+  background-size: 300% 300%;
+  animation: drinkGradient 6s ease infinite;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   TICKER BAR
+   ============================================================ */
 .ticker-wrap { overflow: hidden; width: 100%; }
-.ticker-content { display: flex; animation: tickerScroll 18s linear infinite; white-space: nowrap; will-change: transform; }
+.ticker-content {
+  display: flex;
+  animation: tickerScroll 20s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
 .ticker-content:hover { animation-play-state: paused; }
 
-/* === BAR CARD — cyber terminal card === */
+/* ============================================================
+   CARD STYLES — 专业质感
+   ============================================================ */
 .bar-card, .menu-card {
-  background: #0a0a1a;
-  border-left: 3px solid #00e5ff;
-  will-change: background;
-  transition: background 0.15s ease, border-left-color 0.15s ease, box-shadow 0.15s ease;
+  background: linear-gradient(180deg, #111218 0%, #0f1017 100%);
+  border: 1px solid #23232e;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 .bar-card:hover, .menu-card:hover {
-  background: #0f0f23;
-  box-shadow: 0 0 12px rgba(0,229,255,0.08);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 4px 32px rgba(6, 182, 212, 0.06), 0 0 0 1px rgba(6, 182, 212, 0.06);
+  transform: translateY(-1px);
 }
-.bar-card:hover { border-left-color: #7c3aed; }
-.menu-card:hover { border-left-color: #f72585; }
 
-/* === TERMINAL CARD === */
 .terminal-card {
-  background: #0a0a1a;
-  border: 1px solid #1e2a45;
+  background: linear-gradient(180deg, #111218 0%, #0e1016 100%);
+  border: 1px solid #23232e;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+.terminal-card:hover {
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 2px 24px rgba(139, 92, 246, 0.04);
 }
 
-/* === CYBER PANEL === */
-.cyber-panel {
-  background: #0f0f23;
-  border: 1px solid #1e2a45;
-  border-radius: 2px;
+/* ── 专业数据卡片 ── */
+.pro-card {
+  background: linear-gradient(180deg, #0d0e16 0%, #0b0c14 100%);
+  border: 1px solid #1e1e2a;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pro-card:hover {
+  border-color: #2a2a3a;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.3), 0 0 0 1px rgba(245, 158, 11, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ── 统计数字卡片 ── */
+.stat-card {
+  background: linear-gradient(180deg, #0c0d15 0%, #0a0b12 100%);
+  border: 1px solid #1e1e2a;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--stat-accent, #06b6d4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.stat-card:hover {
+  border-color: #2a2a3a;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.35);
+  transform: translateY(-2px);
+}
+.stat-card:hover::after { opacity: 1; }
+
+/* ============================================================
+   CYBER PANEL — 顶部渐变线 + 微光
+   ============================================================ */
+.cyber-panel {
+  background: linear-gradient(180deg, #111218 0%, #0e1016 100%);
+  border: 1px solid #23232e;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.015);
 }
 .cyber-panel::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #00e5ff60, #7c3aed60, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #06b6d4, #8b5cf6, #f59e0b, transparent);
   z-index: 1;
+  opacity: 0.8;
+}
+.cyber-panel::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
+  pointer-events: none;
 }
 
-/* === LEVER BAR === */
+/* ============================================================
+   LEVER BAR — 饮料色渐变
+   ============================================================ */
 .lever-bar {
-  height: 6px;
-  background: #1e2a45;
-  border-radius: 1px;
+  height: 4px;
+  background: #1e1e28;
+  border-radius: 2px;
   overflow: hidden;
   position: relative;
 }
 .lever-fill {
   height: 100%;
-  border-radius: 1px;
-}
-.lever-low { background: linear-gradient(90deg, #00f5d4, #00e5ff); }
-.lever-mid { background: linear-gradient(90deg, #f0c040, #ffe500); }
-.lever-high { background: linear-gradient(90deg, #ff4757, #f72585); }
-
-/* === DRUNK LEVEL === */
-.drunk-1 { color: #00f5d4; }
-.drunk-2 { color: #00e5ff; }
-.drunk-3 { color: #f0c040; }
-.drunk-4 { color: #ff6b00; }
-.drunk-5 { color: #ff4757; }
-
-/* === BAR MENU === */
-.menu-card {
-  background: #0a0a1a;
-  border-left: 3px solid #00e5ff;
-  transition: background 0.2s ease, border-left-color 0.2s ease;
-}
-.menu-card:hover {
-  background: #0f0f23;
-  border-left-color: #f72585;
-}
-.menu-tag {
-  font-size: 0.65rem;
-  padding: 1px 6px;
   border-radius: 2px;
-  letter-spacing: 0.08em;
-  font-weight: 600;
+  transition: width 0.3s ease;
 }
-.menu-category-btn {
-  padding: 6px 14px;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  border: none;
-  border-radius: 2px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.menu-category-btn.active {
-  background: #00e5ff;
-  color: #050510;
-}
-.menu-category-btn:not(.active) {
-  background: #1a2035;
-  color: #5a6d8a;
-}
-.menu-category-btn:not(.active):hover {
-  color: #00e5ff;
-}
-.menu-price {
-  color: #00e5ff;
-  font-weight: 800;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-}
+.lever-low  { background: linear-gradient(90deg, #10b981, #06b6d4); }
+.lever-mid  { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.lever-high { background: linear-gradient(90deg, #e11d48, #f59e0b); }
 
-/* === BAR NEON SIGN — cyber neon === */
-.bar-neon {
-  animation: neonFlicker 4s ease-in-out infinite;
-}
+/* ── 醉意等级 ── */
+.drunk-1 { color: #10b981; }
+.drunk-2 { color: #06b6d4; }
+.drunk-3 { color: #f59e0b; }
+.drunk-4 { color: #f97316; }
+.drunk-5 { color: #e11d48; }
+
+/* ============================================================
+   NEON SIGNS — 饮料发光
+   ============================================================ */
 .bar-neon-orange {
-  color: #f0c040;
-  text-shadow: 0 0 7px rgba(240,192,64,0.4), 0 0 15px rgba(240,192,64,0.2);
+  color: #f59e0b;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.35);
 }
 .bar-neon-amber {
-  color: #f0c040;
-  text-shadow: 0 0 7px rgba(240,192,64,0.4), 0 0 15px rgba(240,192,64,0.2);
+  color: #f59e0b;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.35);
 }
 .bar-neon-red {
-  color: #ff4757;
-  text-shadow: 0 0 7px rgba(255,71,87,0.4), 0 0 15px rgba(255,71,87,0.2);
+  color: #e11d48;
+  text-shadow: 0 0 8px rgba(225, 29, 72, 0.35);
 }
 .bar-neon-green {
-  color: #00f5d4;
-  text-shadow: 0 0 7px rgba(0,245,212,0.4), 0 0 15px rgba(0,245,212,0.2);
+  color: #10b981;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.35);
 }
 .bar-neon-cyan {
-  color: #00e5ff;
-  text-shadow: 0 0 7px rgba(0,229,255,0.4), 0 0 15px rgba(0,229,255,0.2);
+  color: #06b6d4;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.35);
 }
 
-/* === SECTION HEADER === */
+/* ============================================================
+   SECTION HEADER — 专业分区标题
+   ============================================================ */
 .bar-header {
-  border-bottom: 1px solid #00e5ff30;
-  padding-bottom: 4px;
+  border-bottom: 1px solid #2a2a35;
+  padding-bottom: 6px;
 }
 
-/* === DIVIDER === */
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid;
+  display: inline-block;
+}
+
+/* ── 数据徽章药丸 ── */
+.data-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 20px;
+  border: 1px solid;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+.data-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+/* ── 分割线增强 ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #23232e 20%, #2a2a38 50%, #23232e 80%, transparent);
+  margin: 16px 0;
+}
+
+.thin-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #1a1a24 30%, #1e1e2a 50%, #1a1a24 70%, transparent);
+}
+
+/* ── 数据表格行 ── */
+.data-row {
+  border-bottom: 1px solid #1a1a24;
+  padding: 8px 0;
+  transition: background 0.15s ease;
+}
+.data-row:hover {
+  background: rgba(6, 182, 212, 0.015);
+}
+
+/* ── 引用块 ── */
+.quote-block {
+  border-left: 3px solid #06b6d4;
+  padding: 8px 16px;
+  background: rgba(6, 182, 212, 0.03);
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── 数字大标题 ── */
+.metric-number {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.02em;
+}
+
+/* ── 小标签 ── */
+.tag-pill {
+  display: inline-flex;
+  padding: 2px 8px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+/* ============================================================
+   DIVIDERS
+   ============================================================ */
 .bar-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #00e5ff40, #7c3aed40, #00e5ff40, transparent);
-  opacity: 0.6;
+  background: linear-gradient(90deg, transparent, #2a2a35, #06b6d430, #2a2a35, transparent);
 }
 .terminal-divider {
   height: 1px;
-  background: #00e5ff;
-  opacity: 0.4;
+  background: #06b6d4;
+  opacity: 0.2;
 }
 
-/* === HOVER === */
-.hover-bar, .hover-terminal { will-change: background; transition: background 0.15s ease; }
-.hover-bar:hover, .hover-terminal:hover { background: #0f0f23; }
+/* ============================================================
+   HOVER STATES — 精细微交互
+   ============================================================ */
+.hover-bar, .hover-terminal {
+  will-change: background;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-bar:hover, .hover-terminal:hover {
+  background: linear-gradient(180deg, #14151e 0%, #111218 100%);
+  border-color: #2a2a3a;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
 
-/* === IG GEMSTONE — cyber adaptation === */
+/* ── 链接下划线动画 ── */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  opacity: 0.4;
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   IG GEMSTONE
+   ============================================================ */
 @keyframes gemShimmer {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 .ig-gemstone {
-  background: linear-gradient(135deg, #f72585, #7c3aed, #00e5ff, #00f5d4, #f0c040, #ff6b00, #ffe500, #c8ff00, #f72585);
+  background: linear-gradient(135deg, #e11d48, #8b5cf6, #06b6d4, #10b981, #f59e0b, #fbbf24);
   background-size: 300% 300%;
-  animation: gemShimmer 3s ease-in-out infinite;
+  animation: gemShimmer 4s ease-in-out infinite;
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .ig-gemstone-box {
-  border: 1px solid #f72585;
-  background: #0a0a1a;
+  border: 1px solid #8b5cf6;
+  background: #111218;
+  border-radius: 6px;
 }
 
-/* === WARNING BAR === */
+/* ============================================================
+   WARNING BAR
+   ============================================================ */
 .warning-bar {
-  background: #1a0010;
-  border: 1px solid #ff4757;
+  background: #1a0c0e;
+  border: 1px solid #e11d48;
+  border-radius: 6px;
 }
 
-/* === BLINKING CURSOR === */
+/* ============================================================
+   BLINKING CURSOR
+   ============================================================ */
 .blinking-cursor::after {
   content: '█';
-  color: #00e5ff;
+  color: #06b6d4;
   animation: cursorBlink 1s step-end infinite;
   margin-left: 2px;
 }
 
-/* === AMBER GLOW BG — cyber radial glow === */
-.amber-glow-bg {
-  background: radial-gradient(ellipse at 20% 50%, rgba(0,229,255,0.04) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 30%, rgba(124,58,237,0.04) 0%, transparent 40%);
+/* ============================================================
+   LIQUID BG — 饮料液体流动背景
+   ============================================================ */
+.liquid-bg {
+  background: radial-gradient(ellipse at 20% 30%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 60%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 40%);
 }
 
-/* === PARTNER PAGE — cyber gold luxury === */
+/* ── 液体渐变线 ── */
+.liquid-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #06b6d4, #10b981, #f59e0b, #e11d48, #8b5cf6, transparent);
+  background-size: 200% 100%;
+  animation: liquidFlow 4s ease infinite;
+  border-radius: 1px;
+  opacity: 0.8;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.15), 0 0 24px rgba(139, 92, 246, 0.08);
+}
+
+/* ── 气泡装饰 ── */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: bubble 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   MENU STYLES
+   ============================================================ */
+.menu-card {
+  background: #111218;
+  border: 1px solid #2a2a35;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+.menu-card:hover { border-color: #06b6d4; }
+.menu-tag {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.menu-category-btn {
+  padding: 6px 14px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  border: 1px solid #2a2a35;
+  border-radius: 4px;
+  background: #111218;
+  color: #6b6b70;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+.menu-category-btn.active {
+  background: #06b6d4;
+  color: #0b0c10;
+  border-color: #06b6d4;
+}
+.menu-category-btn:not(.active):hover {
+  color: #06b6d4;
+  border-color: #06b6d4;
+}
+.menu-price {
+  color: #06b6d4;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   PARTNER PAGE — 饮料金
+   ============================================================ */
 @keyframes goldShimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
-@keyframes partnerPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-@keyframes borderGlow {
-  0%, 100% { border-color: #f0c040; }
-  50% { border-color: #ffe500; }
-}
 
 .partner-gold {
-  background: linear-gradient(90deg, #f0c040, #ffe500, #f0c040);
+  background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
   background-size: 200% auto;
-  animation: goldShimmer 3s linear infinite;
+  animation: goldShimmer 4s linear infinite;
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -482,102 +712,123 @@ html { scroll-behavior: smooth; }
 }
 
 .partner-hero {
-  background: radial-gradient(ellipse at 50% 20%, rgba(240,192,64,0.08) 0%, transparent 50%),
-              radial-gradient(ellipse at 30% 80%, rgba(240,192,64,0.05) 0%, transparent 40%),
-              radial-gradient(ellipse at 70% 60%, rgba(255,229,0,0.03) 0%, transparent 30%);
+  background: radial-gradient(ellipse at 50% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 30% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);
 }
 
 .partner-divider {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #f0c040, #ffe500, #f0c040, transparent);
-  animation: goldShimmer 4s linear infinite;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f59e0b, #fbbf24, #f59e0b, transparent);
+  animation: goldShimmer 5s linear infinite;
   background-size: 200% auto;
 }
 
 .partner-card {
-  background: #0a0a1a;
-  border: 1px solid #f0c04030;
-  border-radius: 2px;
+  background: #111218;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 8px;
 }
 
 .partner-highlight {
-  background: linear-gradient(135deg, #1a1200 0%, #0f0a00 100%);
-  border-left: 3px solid #f0c040;
-  animation: borderGlow 2s ease-in-out infinite;
+  background: linear-gradient(135deg, #161410 0%, #121008 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 6px;
 }
 
 .partner-region-card {
-  background: #0a0a1a;
-  border: 1px solid #f0c04020;
-  border-radius: 2px;
-  will-change: background;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  background: #111218;
+  border: 1px solid rgba(245, 158, 11, 0.12);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
 }
 .partner-region-card:hover {
-  background: #0f0f23;
-  border-color: #f0c04060;
+  border-color: rgba(245, 158, 11, 0.4);
 }
 
 .partner-badge {
-  background: #0a0a1a;
-  border: 1px solid #f0c04030;
-  padding: 2px 8px;
-  border-radius: 2px;
+  background: #111218;
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  padding: 3px 10px;
+  border-radius: 4px;
   font-size: 0.65rem;
   font-weight: 600;
-  will-change: background;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: border-color 0.15s ease;
 }
 .partner-badge:hover {
-  background: #0f0f23;
-  border-color: #f0c04080;
+  border-color: rgba(245, 158, 11, 0.5);
 }
 
 .partner-promise {
-  background: radial-gradient(ellipse at center, rgba(240,192,64,0.06) 0%, transparent 70%);
-  border: 1px solid #f0c04040;
-  border-radius: 2px;
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.04) 0%, transparent 70%);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: 8px;
 }
 
 .partner-tg-btn {
-  background: #1a1200;
-  border: 2px solid #f0c040;
-  border-radius: 3px;
-  animation: borderGlow 2s ease-in-out infinite;
-  will-change: transform;
+  background: #161410;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  animation: borderGlow 3s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+.partner-tg-btn:hover {
+  transform: scale(1.03);
 }
 
-/* === PARTNER BANNER on homepage === */
 .partner-banner {
-  background: linear-gradient(135deg, #0a0800 0%, #1a1200 50%, #0a0800 100%);
-  border: 1px solid #f0c04060;
-  border-radius: 2px;
-  animation: borderGlow 2s ease-in-out infinite;
-  will-change: background;
-  transition: background 0.15s ease;
+  background: linear-gradient(135deg, #0e0c06 0%, #161410 50%, #0e0c06 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 6px;
+  animation: borderGlow 3s ease-in-out infinite;
+  transition: background 0.2s ease;
 }
 .partner-banner:hover {
-  background: linear-gradient(135deg, #1a1200 0%, #200e00 50%, #1a1200 100%);
+  background: linear-gradient(135deg, #161410 0%, #1e1a0c 50%, #161410 100%);
 }
 
-/* === DRINK_MASTER BRAND === */
+/* ============================================================
+   BRAND — DRINK_MASTER AI
+   ============================================================ */
 .dm-brand {
   font-family: var(--font-mono), monospace;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
 }
 .dm-logo {
-  background: linear-gradient(135deg, #00e5ff, #7c3aed);
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .dm-tagline {
-  color: #5a6d8a;
+  color: #6b6b70;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
 }
 
-/* === GITHUB LINK === */
+/* ── AI 徽章 ── */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 12px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.08) 0%, rgba(139, 92, 246, 0.04) 100%);
+  color: #06b6d4;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.06);
+  transition: all 0.25s ease;
+}
+.ai-badge:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.12);
+}
+
+/* ============================================================
+   GITHUB LINK
+   ============================================================ */
 .github-link {
   display: inline-flex;
   align-items: center;
@@ -586,19 +837,21 @@ html { scroll-behavior: smooth; }
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  border: 1px solid #1e2a45;
-  border-radius: 2px;
-  background: #0a0a1a;
-  color: #5a6d8a;
+  border: 1px solid #2a2a35;
+  border-radius: 4px;
+  background: #111218;
+  color: #6b6b70;
   transition: all 0.15s ease;
 }
 .github-link:hover {
-  border-color: #00e5ff;
-  color: #00e5ff;
-  box-shadow: 0 0 10px rgba(0,229,255,0.15);
+  border-color: #06b6d4;
+  color: #06b6d4;
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.12);
 }
 
-/* === CYBER SCAN LINE EFFECT === */
+/* ============================================================
+   CYBER SCAN LINE
+   ============================================================ */
 .cyber-scan {
   position: relative;
   overflow: hidden;
@@ -607,8 +860,36 @@ html { scroll-behavior: smooth; }
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0,229,255,0.3), transparent);
-  animation: cyberScan 3s linear infinite;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.25), transparent);
+  animation: scanLine 4s linear infinite;
   pointer-events: none;
+}
+
+/* ============================================================
+   HERO 饮料气泡装饰
+   ============================================================ */
+.hero-bubbles {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bubbles::before {
+  content: "";
+  position: absolute;
+  width: 6px; height: 6px;
+  background: rgba(6, 182, 212, 0.3);
+  border-radius: 50%;
+  top: 60%;
+  left: 20%;
+  animation: bubble 4s ease-in-out infinite;
+}
+.hero-bubbles::after {
+  content: "";
+  position: absolute;
+  width: 4px; height: 4px;
+  background: rgba(245, 158, 11, 0.3);
+  border-radius: 50%;
+  top: 70%;
+  left: 70%;
+  animation: bubble 3.5s ease-in-out 1s infinite;
 }

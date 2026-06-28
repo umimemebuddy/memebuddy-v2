@@ -1,7 +1,6 @@
 import { coinData } from "@/components/Home/TickerBar";
 import Link from "next/link";
 
-/* ── 预测市场：纯计算派生，零外部依赖 ── */
 interface Prediction {
   id: string;
   symbol: string;
@@ -9,14 +8,13 @@ interface Prediction {
   name: string;
   question: string;
   questionCn: string;
-  yesPrice: number;   // 0-100 cents
+  yesPrice: number;
   noPrice: number;
   volume: string;
   deadline: string;
   lever: number;
 }
 
-/* Fun prediction questions — meme + booze crossover */
 const QUESTIONS = [
   { en: "Will $BULL reach ×100 by Friday?", cn: "$BULL周五能×100吗？" },
   { en: "Is $BEAR going to zero tonight?", cn: "$BEAR今晚归零吗？" },
@@ -50,10 +48,9 @@ const predictions: Prediction[] = coinData.filter(c => c.category === "trading")
   lever: c.lever,
 }));
 
-/* Yes/No price bar — visual probability meter */
 function YesBar({ yes }: { yes: number }) {
-  const yesColor = yes >= 70 ? "#00ff88" : yes >= 50 ? "#ffb800" : "#ff3b3b";
-  const noColor  = yes >= 70 ? "#ff3b3b" : yes >= 50 ? "#555" : "#00ff88";
+  const yesColor = yes >= 70 ? "#10b981" : yes >= 50 ? "#f59e0b" : "#e11d48";
+  const noColor  = yes >= 70 ? "#e11d48" : yes >= 50 ? "#6b6b70" : "#10b981";
   return (
     <div className="flex items-center gap-1 font-mono" style={{ fontSize: "0.6rem" }}>
       <div className="lever-bar w-24">
@@ -68,38 +65,33 @@ function YesBar({ yes }: { yes: number }) {
 export function PredictionMarket() {
   return (
     <section className="py-4">
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Header */}
+      <div className="max-w-5xl mx-auto px-6">
         <div className="bar-header flex items-center gap-2 mb-4 font-mono">
-          <span className="bloomberg-purple font-bold animate-urgent">🎯 PREDICT</span>
-          <span className="bloomberg-orange font-bold text-sm">/ PREDICTION MARKET</span>
-          <span className="cn-text text-xs">预测市场</span>
-          <span style={{ color: "#555" }} className="text-xs ml-auto">
+          <span className="animate-status font-bold" style={{ color: "#8b5cf6" }}>🎯 AI PREDICT</span>
+          <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "0.85rem" }}>/ DRINK PREDICTION MARKET</span>
+          <span className="cn-text text-xs">AI预测市场</span>
+          <span style={{ color: "#6b6b70" }} className="text-xs ml-auto">
             {predictions.length} EVENTS · YES/NO · DEADLINE
           </span>
         </div>
 
-        {/* Prediction cards — 2-col grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {predictions.map((p) => (
             <Link key={p.id} href={`/recipes/${p.id}`} className="group block">
               <div className="bar-card p-3">
-                {/* Row 1: Question */}
                 <div className="font-mono text-xs mb-1">
-                  <span className="bloomberg-orange font-bold">{p.symbol}</span>
-                  <span style={{ color: "#e0e0e0", fontSize: "0.7rem" }}> {p.question}</span>
+                  <span style={{ color: "#f59e0b", fontWeight: 700 }}>🍹 {p.symbol}</span>
+                  <span style={{ color: "#e0dcd0", fontSize: "0.7rem" }}> {p.question}</span>
                 </div>
                 <div className="cn-text font-mono" style={{ fontSize: "0.65rem" }}>
                   {p.questionCn}
                 </div>
-                {/* Row 2: Yes/No bar */}
                 <div className="mt-1.5">
                   <YesBar yes={p.yesPrice} />
                 </div>
-                {/* Row 3: Volume + Deadline */}
                 <div className="flex items-center gap-3 font-mono mt-1" style={{ fontSize: "0.6rem" }}>
-                  <span style={{ color: "#ffb800" }}>VOL:{p.volume}</span>
-                  <span className="bloomberg-cyan font-bold">⏰{p.deadline}</span>
+                  <span style={{ color: "#f59e0b" }}>VOL:{p.volume}</span>
+                  <span style={{ color: "#06b6d4", fontWeight: 700 }}>⏰{p.deadline}</span>
                 </div>
               </div>
             </Link>
