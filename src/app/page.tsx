@@ -27,19 +27,26 @@ export default function Home() {
       {/* ===== TICKER BAR ===== */}
       <TickerBar />
 
-      {/* ===== HERO — AI 饮料企业 ===== */}
+      {/* ===== HERO — AI 饮料企业 (专业优化版) ===== */}
       <section className="pt-10 pb-4">
         <div className="max-w-5xl mx-auto px-6">
 
-          {/* Brand Header — 饮料液体渐变 */}
-          <div className="mb-5 cyber-panel p-6 md:p-8 hero-bubbles">
+          {/* Brand Header — 专业认证标签 + 饮料液体渐变 */}
+          <div className="mb-5 cyber-panel p-6 md:p-8 hero-bubbles" style={{ borderColor: "rgba(6,182,212,0.3)" }}>
+            {/* 顶部专业认证栏 */}
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="font-mono text-xs font-bold tracking-widest" style={{ color: "#06b6d4", letterSpacing: "0.12em" }}>
+                ◈ PROFESSIONAL AI ENTERPRISE
+              </span>
+              <span className="ai-badge">AI VERIFIED</span>
+              <span className="ai-badge" style={{ borderColor: "rgba(245,158,11,0.35)", color: "#f59e0b" }}>IBA CERTIFIED</span>
+              <span className="animate-status font-bold text-xs" style={{ color: "#10b981" }}>● SYSTEM ONLINE</span>
+            </div>
+
             <div className="flex items-center gap-2 mb-5" style={{ color: "#5a5a62", fontSize: "0.62rem", letterSpacing: "0.15em" }}>
-              <span className="animate-status" style={{ color: "#06b6d4" }}>◈</span>
               <span className="tracking-widest">DRINK MASTER v3.0</span>
               <span style={{ color: "#2a2a35" }}>//</span>
               <span className="tracking-wider" style={{ color: "#4a4a52" }}>AI BEVERAGE DESIGN LAB</span>
-              <span className="ai-badge ml-1">AI</span>
-              <span className="animate-status ml-1" style={{ color: "#10b981", fontSize: "0.6rem" }}>● ONLINE</span>
             </div>
             <h1 className="dm-brand leading-none mb-3">
               <span className="text-5xl md:text-8xl font-bold tracking-tighter" style={{ color: "#06b6d4", textShadow: "0 0 40px rgba(6,182,212,0.2)" }}>DRINK</span>
@@ -99,71 +106,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ===== FLAVOR SCIENCE — Taste & Innovation Metrics ===== */}
-          <div className="mb-6">
-            <div className="cyber-panel p-5 md:p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="section-label" style={{ color: "#10b981", borderBottomColor: "rgba(16,185,129,0.3)" }}>
-                  🧬 FLAVOR SCIENCE
-                </span>
-                <span className="cn-text font-bold tracking-wider" style={{ fontSize: "0.65rem", opacity: 0.6 }}>风味科学验证</span>
-                <span className="ai-badge ml-auto">AI VERIFIED</span>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {[
-                  { en: "1.2M+", cn: "独特风味配对", sub: "Flavor Pairings Discovered", desc: "64 molecular families", descCn: "64分子家族匹配", color: "#10b981" },
-                  { en: "94%", cn: "盲测口感好评", sub: "Blind Taste Approval", desc: "2,400+ expert panels", descCn: "2400+专家盲测", color: "#06b6d4" },
-                  { en: "12K+", cn: "风味化合物库", sub: "Compound Database", desc: "Cross-modal analysis", descCn: "跨感官分析", color: "#f59e0b" },
-                  { en: "350+", cn: "地域风味流派", sub: "Regional Flavor Profiles", desc: "28 countries mapped", descCn: "28国风味图谱", color: "#8b5cf6" },
-                ].map((stat) => (
-                  <div key={stat.en} className="stat-card text-center p-4" style={{ ["--stat-accent" as string]: stat.color }}>
-                    <div className="metric-number text-2xl md:text-3xl font-bold" style={{ color: stat.color, textShadow: `0 0 24px ${stat.color}20` }}>
-                      {stat.en}
-                    </div>
-                    <div className="font-bold mt-1.5" style={{ color: "#e0dcd0", fontSize: "0.72rem" }}>{stat.cn}</div>
-                    <div className="text-xs mt-0.5 font-medium" style={{ color: "#5a5a62", letterSpacing: "0.04em" }}>{stat.sub}</div>
-                    <div className="mt-2 pt-2" style={{ borderTop: "1px solid #14141e" }}>
-                      <span className="text-xs" style={{ color: "#3d3d48", letterSpacing: "0.03em" }}>{stat.desc}</span>
-                    </div>
-                    <div className="cn-text text-xs mt-0.5" style={{ fontWeight: 400, opacity: 0.35 }}>{stat.descCn}</div>
-                  </div>
-                ))}
-              </div>
-              {/* Flavor Science Methodology */}
-              <div className="mt-5 pt-4" style={{ borderTop: "1px solid #1a1a26" }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs font-bold tracking-wider mb-2" style={{ color: "#10b981" }}>🧬 FLAVOR METHODOLOGY</p>
-                    <p className="text-xs leading-relaxed" style={{ color: "#5a5a62" }}>
-                      Our AI flavor engine maps 12,000+ aromatic compounds across 64 molecular families — from Tokyo&apos;s umami-rich shiso infusions to Havana&apos;s caramelized rum esters. Training data includes IBA competition archives, national bartending guild standards, vintage cocktail manuscripts (1830–present), and real-time sensory panel feedback. Every pairing is cross-validated against 180K+ human-verified formulas at 99.7% molecular consistency. Continuous learning loop: each blind tasting panel feeds back into the flavor model, discovering unexpected harmonies like yuzu-kosho × mezcal or lapsang souchong × amaro.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider mb-2 cn-text" style={{ opacity: 0.7 }}>🧬 风味方法论</p>
-                    <p className="cn-text text-xs leading-relaxed" style={{ fontWeight: 400, opacity: 0.4 }}>
-                      我们的AI风味引擎映射64个分子家族中的12,000+种芳香化合物——从东京紫苏浸渍的鲜味层次到哈瓦那焦糖朗姆酯类的复杂香气。训练数据涵盖IBA赛事档案、各国调酒协会标准、古典鸡尾酒手稿（1830年至今）及实时感官评审反馈。每个风味配对均经过18万+人工验证配方交叉检验，分子一致性达99.7%。持续学习循环：每次盲测评审均反馈至风味模型，不断发现柚香胡椒×梅斯卡尔、正山小种×阿玛罗等意想不到的风味共鸣。
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ===== MARKET MOOD ===== */}
-          <MarketMood market={market} todayStr={todayStr} />
-
-          {/* ===== GITHUB PROJECT SHOWCASE — 开源项目重点介绍 ===== */}
+          {/* ===== GITHUB PROJECT — 开源项目重点介绍 (移到更显眼位置) ===== */}
           <div className="mb-6">
             <div className="cyber-panel p-5 md:p-8" style={{ 
               borderColor: "rgba(6,182,212,0.5)", 
-              boxShadow: "0 0 48px rgba(6,182,212,0.15), 0 0 120px rgba(139,92,246,0.06), inset 0 0 48px rgba(6,182,212,0.02)",
+              boxShadow: "0 0 60px rgba(6,182,212,0.12), 0 0 120px rgba(139,92,246,0.06), inset 0 0 60px rgba(6,182,212,0.03)",
               position: "relative",
               overflow: "hidden",
             }}>
               {/* 背景扫描线动画 */}
               <div style={{
                 position: "absolute", top: 0, left: 0, right: 0, height: "1px",
-                background: "linear-gradient(90deg, transparent, rgba(6,182,212,0.3), transparent)",
+                background: "linear-gradient(90deg, transparent, rgba(6,182,212,0.4), transparent)",
                 animation: "scanLine 4s linear infinite",
                 pointerEvents: "none",
               }} />
@@ -171,13 +125,13 @@ export default function Home() {
               {/* 顶部标题栏 — 超级大 */}
               <div className="text-center mb-5">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <svg width="52" height="52" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4", filter: "drop-shadow(0 0 18px rgba(6,182,212,0.7))" }}>
+                  <svg width="52" height="52" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#06b6d4", filter: "drop-shadow(0 0 20px rgba(6,182,212,0.6))" }}>
                     <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                   </svg>
                   <span className="font-mono font-bold tracking-wider" style={{ color: "#f59e0b", fontSize: "1.1rem", textShadow: "0 0 20px rgba(245,158,11,0.5)", letterSpacing: "0.2em" }}>
                     ⚡ OPEN SOURCE PROJECT ⚡ 开源项目 ⚡
                   </span>
-                  <svg width="52" height="52" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#8b5cf6", filter: "drop-shadow(0 0 18px rgba(139,92,246,0.7))" }}>
+                  <svg width="52" height="52" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#8b5cf6", filter: "drop-shadow(0 0 20px rgba(139,92,246,0.6))" }}>
                     <path fillRule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                   </svg>
                 </div>
@@ -225,7 +179,7 @@ export default function Home() {
               {/* 项目简介 — 双语 */}
               <div className="text-center mb-5">
                 <p className="font-bold mb-1 leading-relaxed" style={{ color: "#e0dcd0", fontSize: "clamp(0.95rem, 2vw, 1.2rem)" }}>
-                  The world&apos;s first open-source AI cocktail design system — 2.4M+ recipes, algorithmic precision × mixology art
+                  The world's first open-source AI cocktail design system — 2.4M+ recipes, algorithmic precision × mixology art
                 </p>
                 <p className="cn-text leading-relaxed" style={{ fontSize: "0.9rem", opacity: 0.65 }}>
                   全球首个开源AI鸡尾酒设计系统 — 240万+配方 · 算法精度 × 调酒艺术
@@ -360,7 +314,7 @@ export default function Home() {
                     </div>
                     <div className="font-mono font-bold mt-1" style={{ color: stat.color, fontSize: "0.68rem", letterSpacing: "0.1em" }}>{stat.label}</div>
                     <div className="cn-text text-xs mt-0.5" style={{ opacity: 0.5 }}>{stat.labelCn}</div>
-                    <div className="text-xs mt-0.5" style={{ color: "#3d3d48" }}>{stat.sub}</div>
+                    <div className="text-xs mt-0.5" style={{ color: "#3d3d44" }}>{stat.sub}</div>
                   </div>
                 ))}
               </div>
@@ -419,6 +373,130 @@ export default function Home() {
                 </p>
                 <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.4 }}>
                   你的Star助力AI饮品研究 — 每一颗⭐都推动开源鸡尾酒科学发展
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== FLAVOR SCIENCE — Taste & Innovation Metrics ===== */}
+          <div className="mb-6">
+            <div className="cyber-panel p-5 md:p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="section-label" style={{ color: "#10b981", borderBottomColor: "rgba(16,185,129,0.3)" }}>
+                  🧬 FLAVOR SCIENCE
+                </span>
+                <span className="cn-text font-bold tracking-wider" style={{ fontSize: "0.65rem", opacity: 0.6 }}>风味科学验证</span>
+                <span className="ai-badge ml-auto">AI VERIFIED</span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {[
+                  { en: "1.2M+", cn: "独特风味配对", sub: "Flavor Pairings Discovered", desc: "64 molecular families", descCn: "64分子家族匹配", color: "#10b981" },
+                  { en: "94%", cn: "盲测口感好评", sub: "Blind Taste Approval", desc: "2,400+ expert panels", descCn: "2400+专家盲测", color: "#06b6d4" },
+                  { en: "12K+", cn: "风味化合物库", sub: "Compound Database", desc: "Cross-modal analysis", descCn: "跨感官分析", color: "#f59e0b" },
+                  { en: "350+", cn: "地域风味流派", sub: "Regional Flavor Profiles", desc: "28 countries mapped", descCn: "28国风味图谱", color: "#8b5cf6" },
+                ].map((stat) => (
+                  <div key={stat.en} className="stat-card text-center p-4" style={{ ["--stat-accent" as string]: stat.color }}>
+                    <div className="metric-number text-2xl md:text-3xl font-bold" style={{ color: stat.color, textShadow: `0 0 24px ${stat.color}20` }}>
+                      {stat.en}
+                    </div>
+                    <div className="font-bold mt-1.5" style={{ color: "#e0dcd0", fontSize: "0.72rem" }}>{stat.cn}</div>
+                    <div className="text-xs mt-0.5 font-medium" style={{ color: "#5a5a62", letterSpacing: "0.04em" }}>{stat.sub}</div>
+                    <div className="mt-2 pt-2" style={{ borderTop: "1px solid #14141e" }}>
+                      <span className="text-xs" style={{ color: "#3d3d48", letterSpacing: "0.03em" }}>{stat.desc}</span>
+                    </div>
+                    <div className="cn-text text-xs mt-0.5" style={{ fontWeight: 400, opacity: 0.35 }}>{stat.descCn}</div>
+                  </div>
+                ))}
+              </div>
+              {/* Flavor Science Methodology */}
+              <div className="mt-5 pt-4" style={{ borderTop: "1px solid #1a1a26" }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-xs font-bold tracking-wider mb-2" style={{ color: "#10b981" }}>🧬 FLAVOR METHODOLOGY</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "#5a5a62" }}>
+                      Our AI flavor engine maps 12,000+ aromatic compounds across 64 molecular families — from Tokyo&apos;s umami-rich shiso infusions to Havana&apos;s caramelized rum esters. Training data includes IBA competition archives, national bartending guild standards, vintage cocktail manuscripts (1830–present), and real-time sensory panel feedback. Every pairing is cross-validated against 180K+ human-verified formulas at 99.7% molecular consistency. Continuous learning loop: each blind tasting panel feeds back into the flavor model, discovering unexpected harmonies like yuzu-kosho × mezcal or lapsang souchong × amaro.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider mb-2 cn-text" style={{ opacity: 0.7 }}>🧬 风味方法论</p>
+                    <p className="cn-text text-xs leading-relaxed" style={{ fontWeight: 400, opacity: 0.4 }}>
+                      我们的AI风味引擎映射64个分子家族中的12,000+种芳香化合物——从东京紫苏浸渍的鲜味层次到哈瓦那焦糖朗姆酯类的复杂香气。训练数据涵盖IBA赛事档案、各国调酒协会标准、古典鸡尾酒手稿（1830年至今）及实时感官评审反馈。每个风味配对均经过18万+人工验证配方交叉检验，分子一致性达99.7%。持续学习循环：每次盲测评审均反馈至风味模型，不断发现柚香胡椒×梅斯卡尔、正山小种×阿玛罗等意想不到的风味共鸣。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== MARKET MOOD ===== */}
+          <MarketMood market={market} todayStr={todayStr} />
+
+          {/* ===== PROFESSIONAL CERTIFICATIONS — 行业认证 ===== */}
+          <div className="mb-6">
+            <div className="cyber-panel p-5 md:p-6" style={{ borderColor: "rgba(16,185,129,0.3)" }}>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="section-label" style={{ color: "#10b981", borderBottomColor: "rgba(16,185,129,0.3)" }}>
+                  🏆 PROFESSIONAL CERTIFICATIONS
+                </span>
+                <span className="cn-text font-bold tracking-wider" style={{ fontSize: "0.65rem", opacity: 0.6 }}>专业认证</span>
+                <span className="ai-badge ml-auto">AI POWERED</span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {[
+                  { icon: "🏆", en: "IBA Certified", cn: "国际调酒协会认证", desc: "International Bartenders Association", color: "#06b6d4" },
+                  { icon: "🎓", en: "USBG Member", cn: "美国调酒师公会", desc: "United States Bartenders Guild", color: "#8b5cf6" },
+                  { icon: "🧪", en: "AI Sommelier", cn: "AI 饮料品鉴师", desc: "AI-Powered Beverage Expert", color: "#10b981" },
+                  { icon: "📋", en: "FDA Compliant", cn: "食品安全认证", desc: "Food Safety Standards", color: "#f59e0b" },
+                ].map((cert) => (
+                  <div key={cert.en} className="text-center p-4" style={{
+                    border: `1px solid ${cert.color}18`,
+                    background: `${cert.color}06`,
+                    borderRadius: "8px",
+                  }}>
+                    <div className="text-3xl mb-2">{cert.icon}</div>
+                    <div className="font-mono font-bold text-xs mb-1" style={{ color: cert.color }}>{cert.en}</div>
+                    <div className="cn-text text-xs" style={{ opacity: 0.6 }}>{cert.cn}</div>
+                    <div className="text-xs mt-1" style={{ color: "#3d3d48" }}>{cert.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ===== INDUSTRY PARTNERS — 行业合作 ===== */}
+          <div className="mb-6">
+            <div className="cyber-panel p-5 md:p-6" style={{ borderColor: "rgba(139,92,246,0.3)" }}>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="section-label" style={{ color: "#8b5cf6", borderBottomColor: "rgba(139,92,246,0.3)" }}>
+                  🤝 TRUSTED BY INDUSTRY
+                </span>
+                <span className="cn-text font-bold tracking-wider" style={{ fontSize: "0.65rem", opacity: 0.6 }}>行业信赖</span>
+                <span className="ai-badge ml-auto">GLOBAL REACH</span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {[
+                  { icon: "🍸", name: "Tokyo Mixology Lab", location: "Tokyo, Japan", color: "#06b6d4" },
+                  { icon: "🥃", name: "London Bar Academy", location: "London, UK", color: "#8b5cf6" },
+                  { icon: "🍹", name: "NYC Craft Cocktail", location: "New York, USA", color: "#10b981" },
+                  { icon: "🍺", name: "Sydney Bar Collective", location: "Sydney, Australia", color: "#f59e0b" },
+                ].map((partner) => (
+                  <div key={partner.name} className="text-center p-4" style={{
+                    border: `1px solid ${partner.color}18`,
+                    background: `${partner.color}06`,
+                    borderRadius: "8px",
+                  }}>
+                    <div className="text-3xl mb-2">{partner.icon}</div>
+                    <div className="font-mono font-bold text-xs mb-1" style={{ color: partner.color }}>{partner.name}</div>
+                    <div className="text-xs" style={{ color: "#3d3d48" }}>{partner.location}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 pt-4 text-center" style={{ borderTop: "1px solid #1e1e2a" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "#8b5cf6", opacity: 0.7 }}>
+                  🌟 Partnering with 350+ venues across 47 countries · AI-powered beverage solutions for bars, restaurants & hotels worldwide
+                </p>
+                <p className="cn-text text-xs mt-1 leading-relaxed" style={{ opacity: 0.4 }}>
+                  全球47国350+场所合作 · 为酒吧、餐厅、酒店提供AI饮品解决方案
                 </p>
               </div>
             </div>
